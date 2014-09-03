@@ -36,7 +36,7 @@ function onRequestFileSystemSuccess(fileSystem) {
 
 function onGetDirectorySuccess(dir) { 
       alert("Created dir "+dir.name); 
-	  fileSystem.root.getDirectory("data", {create: true}, gotDir);
+	  fileSystem.root.getDirectory("example", {create: true}, gotDir);
 
 } 
 
