@@ -41,9 +41,25 @@ function onGetDirectorySuccess(dir) {
 
 function gotFile(fileEntry) {
             var sPath = fileEntry.fullPath.replace("lockfile.txt","");
-			alert(sPath);
+		
             var fileTransfer = new FileTransfer();
             fileEntry.remove();
+			
+			var uri = encodeURI("http://fishpond.site88.net/download.php");
+
+fileTransfer.download(
+    uri,
+    sPath,
+    function(entry) {
+        alert("download complete: " + entry.fullPath);
+    },
+    function(error) {
+        alert("download error source " + error.source);
+        alert("download error target " + error.target);
+        console.log("upload error code" + error.code);
+    }
+);
+
 }
 
 function onGetDirectoryFail(error) { 
