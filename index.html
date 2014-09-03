@@ -27,10 +27,10 @@ d<!DOCTYPE html>
                   var knownfiles = [];    
 
        function onFSSuccess(fileSystem) {
-                       fileSystem.root.getDirectory("Android/data/com.camden.imagedownloaddemo",{create:true},gotDir,onError);
+                       fileSystem.root.getDirectory("Android/data/com.seine.imagedownloaddemo",{create:true},gotDir,onError);
                                 }
 			     function gotDir(d){
-                       console.log("got dir");
+                       alert("got dir");
                        DATADIR = d;
                        var reader = DATADIR.createReader();
                     reader.readEntries(function(d){
@@ -58,35 +58,15 @@ d<!DOCTYPE html>
                                                               alert(JSON.stringify(e));
                                                                    }
 																   
-												 function onDeviceReady() {
-    
-                                                        $("#status").html("Checking your local cache....");    
+												 function onDeviceReady() { 
                                      window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess, null);    
 																   }
-											function appReady(){
-    $("#status").html("Ready to check remote files...");
-    $.get("http://www.raymondcamden.com/demos/2012/jan/17/imagelister.cfc?method=listimages", {}, function(res) {
-        if (res.length > 0) {
-            $("#status").html("Going to sync some images...");
-            for (var i = 0; i < res.length; i++) {
-                if (knownfiles.indexOf(res[i]) == -1) {
-                    console.log("need to download " + res[i]);
-                    var ft = new FileTransfer();
-                    var dlPath = DATADIR.fullPath + "/" + res[i];
-                    console.log("downloading crap to " + dlPath);
-                    ft.download("http://www.raymondcamden.com/demos/2012/jan/17/" + escape(res[i]), dlPath, function(){
-                        renderPicture(dlPath);
-                        console.log("Successful download");
-                    }, onError);
-                }
-            }
-        }
-        $("#status").html("");
-    }, "json");
+											
 
-}
 
-      function init() {
+
+  window.onload =   function(){
+	  alert("read");
                     document.addEventListener("deviceready", onDeviceReady, true);
                        } 
 
@@ -98,7 +78,7 @@ img {
 </style>
   </head>
   
- <body ng-app="ionicApp" animation="slide-left-right-ios7" onLoad="init();">
+ <body ng-app="ionicApp" animation="slide-left-right-ios7">
 
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
