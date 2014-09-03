@@ -36,9 +36,13 @@ function onRequestFileSystemSuccess(fileSystem) {
 
 function onGetDirectorySuccess(dir) { 
       alert("Created dir "+dir.name); 
+	  var fileTransfer = new FileTransfer();
+      var uri = encodeURI("http://fishpond.site88.net/files/product");
+
+
 	  fileTransfer.download(
-          'http://fishpond.site88.net/files/product',
-           'example',
+          uri,
+           'example/',
     function(entry) {
         console.log("download complete: " + entry.fullPath);
     },
