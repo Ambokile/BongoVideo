@@ -39,6 +39,10 @@ function onGetDirectorySuccess(dir) {
 	  dir.getFile("lockfile.txt", {create: true, exclusive: true}, gotFile);
 } 
 
+function gotFile(fileEntry) {
+      alert("Created file ");
+}
+
 function onGetDirectoryFail(error) { 
      alert("Error creating directory "+error.code); 
 } 
