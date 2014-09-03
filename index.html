@@ -31,7 +31,7 @@ window.onload =  function()
                                window.requestFileSystem(
                                             LocalFileSystem.PERSISTENT, 0,function onFileSystemSuccess(fileSystem                                              ) {
                                                    fileSystem.root.getFile(
-                                                          "Android/data/com.camden.imagedownloaddemo", {create: true, exclusive: false},
+                                                          "Android/data/com.seine.bongovideo", {create: true, exclusive: false},
                                                    function gotFileEntry(fileEntry){
                                                   var sPath = fileEntry.fullPath.replace("Android/data/com.camden.imagedownloaddemo","");
                                                 var fileTransfer = new FileTransfer();
