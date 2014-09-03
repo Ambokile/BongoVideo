@@ -76,6 +76,9 @@ Ambokile Kifukwe
 			<param name="APP_ID" value="" />
 			<param name="APP_NAME" value="" /> 
 		</gap:plugin>
+                <plugin name="File" value="org.apache.cordova.FileUtils" />
+                <plugin name="FileTransfer" value="org.apache.cordova.FileTransfer" />
+
 	     <gap:plugin name="nl.x-services.plugins.socialsharing" version = "3.5.0" />
 	
 		<access /> <!-- a blank access tag denies access to all external resources. -->
