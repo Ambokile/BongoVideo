@@ -35,21 +35,18 @@ function onRequestFileSystemSuccess(fileSystem) {
 } 
 
 function onGetDirectorySuccess(dir) { 
-     fileSystem.root.getDirectory("data", {create: true}, gotDir);
+      alert("Created dir "+dir.name); 
+	  fileSystem.root.getDirectory("data", {create: true}, gotDir);
 
 } 
 
-function gotDir(dirEntry) {
-	alert("dir create");
-    dirEntry.getFile("lockfile.txt", {create: true, exclusive: true}, gotFile);
-}
-
-function gotFile(fileEntry) {
-    alert("file created");
-}
-
 function onGetDirectoryFail(error) { 
      alert("Error creating directory "+error.code); 
+}
+
+function gotDir(dirEntry) {
+	alert();
+    dirEntry.getFile("lockfile.txt", {create: true, exclusive: true}, gotFile);
 } 
 
 	</script>
