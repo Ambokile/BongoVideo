@@ -1,0 +1,154 @@
+d<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/SocialSharing.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/processor.js"></script>
+     <script type="text/javascript">
+                  
+				  var DATADIR;
+                  var knownfiles = [];    
+
+       function onFSSuccess(fileSystem) {
+                       fileSystem.root.getDirectory("Android/data/com.camden.imagedownloaddemo",{create:true},gotDir,onError);
+                                }
+			     function gotDir(d){
+                       console.log("got dir");
+                       DATADIR = d;
+                       var reader = DATADIR.createReader();
+                    reader.readEntries(function(d){
+                                     gotFiles(d);
+                                          appReady();
+                                          },onError);
+                                   }
+								   
+					function gotFiles(entries) {
+                            alert("The dir has "+entries.length+" entries.");
+                                 for (var i=0; i<entries.length; i++) {
+                                         console.log(entries[i].name+' dir? '+entries[i].isDirectory);
+                                         knownfiles.push(entries[i].name);
+                                         renderPicture(entries[i].fullPath);
+                                                                         }
+                                                 }
+												 
+												 function renderPicture(path){
+                                                          $("#info").append("<img src='file://"+path+"'>");
+                                                          alert("<img src='file://"+path+"'>");
+                                                                              }
+
+                                                 function onError(e){
+                                                              alert("ERROR");
+                                                              alert(JSON.stringify(e));
+                                                                   }
+																   
+												 function onDeviceReady() {
+    
+                                                        $("#status").html("Checking your local cache....");    
+                                     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFSSuccess, null);    
+																   }
+											function appReady(){
+    $("#status").html("Ready to check remote files...");
+    $.get("http://www.raymondcamden.com/demos/2012/jan/17/imagelister.cfc?method=listimages", {}, function(res) {
+        if (res.length > 0) {
+            $("#status").html("Going to sync some images...");
+            for (var i = 0; i < res.length; i++) {
+                if (knownfiles.indexOf(res[i]) == -1) {
+                    console.log("need to download " + res[i]);
+                    var ft = new FileTransfer();
+                    var dlPath = DATADIR.fullPath + "/" + res[i];
+                    console.log("downloading crap to " + dlPath);
+                    ft.download("http://www.raymondcamden.com/demos/2012/jan/17/" + escape(res[i]), dlPath, function(){
+                        renderPicture(dlPath);
+                        console.log("Successful download");
+                    }, onError);
+                }
+            }
+        }
+        $("#status").html("");
+    }, "json");
+
+}
+
+      function init() {
+                    document.addEventListener("deviceready", onDeviceReady, true);
+                       } 
+
+	</script>
+    <style>
+img {
+    max-width: 200px;
+}
+</style>
+  </head>
+  
+ <body ng-app="ionicApp" animation="slide-left-right-ios7" onLoad="init();">
+
+    <ion-nav-view animation="slide-left-right"></ion-nav-view>
+
+
+    <script id="info.html" type="text/ng-template"> 
+     
+	    
+	       <ion-side-menus>
+		   
+  <!-- Center content -->
+            
+				<ion-side-menu-content ng-controller="ContentController">
+              <ion-header-bar class="bar bar-balanced">
+			               <button class="button button-icon icon ion-compose" menu-toggle="left"></button>
+						    <ion-nav-buttons side="left">
+						   <button class="button button-icon icon-right ion-ios7-loop-strong" onclick = "onDeviceReady()" ></button></ion-nav-buttons>
+                          <h1 class="title" style = "margin-left:10%;">Matangazo</h1>
+                        </ion-header-bar>
+				<ion-content>
+						
+  
+           <div id ="info"  style = "padding:2%; background-color:#C0C0C0;">
+		              
+		     </div> 
+			 <div id= "status">
+			 </div>
+			 </ion-content>
+			 <ion-footer-bar class="bar bar-light" style="padding:2;">
+                        </ion-footer-bar>
+             </ion-side-menu-content>
+			  
+
+  <!-- Left menu -->
+           <ion-side-menu side="left">
+               <ion-header-bar class = "bar bar-positive">
+       
+        <h1 class="title" style="font-weight:bold;">Matangazo</h1>
+		<button class="button button-icon icon ion-chevron-right" menu-close id = "first_button"></button>
+     </ion-header-bar>
+	 <ion-header-bar class = "bar-subheader bar-light">
+        <h1 class="title" style="font-weight:bold;">Weka matamgazo</h1>
+     </ion-header-bar>
+      <ion-content>
+			      
+      </ion-content>
+           </ion-side-menu>
+</ion-side-menus>
+      </ion-view>
+    </script>
+   
+   
+  </body>
+</html>

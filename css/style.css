@@ -1,0 +1,107 @@
+/* Empty. Add your own CSS if you like */
+.slider {
+            height: auto;
+			visibility:hidden;
+                   }
+				   
+       .slider-slide {
+                padding-top: 45px;
+                color: #000;
+                background-color:#C0C0C0;
+                text-align: center;
+
+          font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+          font-weight: 300;
+	   }
+
+a:hover{
+	     background-color:#00f;
+		 color:#fff;
+	}
+.button-icon{
+	      size:12px;
+	 }
+.varify{
+	position:fixed;
+	top:0px;
+	width:100%;
+	height:100%;
+	background-color:#000;
+	opacity:.75;
+	left:0px;
+	z-index:1;
+}
+.varify_form{
+	  position:fixed;
+	  top:30%;
+	  left:10%;
+	  width:80%;
+	  height:auto;
+	  background-color:#fff;
+	  z-index:2;
+	  opacity:1;
+	  
+	}
+	
+.varify_alert{
+	  position:fixed;
+	  top:30%;
+	  left:10%;
+	  width:80%;
+	  height:20%;
+	  background-color:#00f;
+	  z-index:2;
+	  opacity:1;
+	  color:#fff;
+	  border:#C0C0C0 thick solid;
+	  
+	}
+.seine_head{
+	   width:100%;
+	   height:20%;
+	    background-color:#fff;  
+	}
+.seine_msg{
+	   width:100%;
+	   margin-top:2%;
+	   border-top:#C0C0C0 thin solid;
+	   height:auto;
+	  	padding:5%;
+	}			
+.buy{
+	   position:fixed;
+	  top:30%;
+	  left:10%;
+	  width:80%;
+	  height:auto;
+	  background-color:#000;
+	  z-index:2;
+	  opacity:1;
+	  color:#fff;
+	  
+	}
+.buy_head{
+	width:100%;
+	   height:15%;
+	   text-indent:5%;
+	   font-size:16px;
+	    background-color:transparent; 
+	}
+.buy_msg{
+	   width:100%;
+	   margin-top:2%;
+	   border-top:#C0C0C0 thin solid;
+	   height:auto;
+	  	padding:5%;
+	}	
+.varify_mpesa{
+	  position:fixed;
+	top:0px;
+	width:100%;
+	height:100%;
+	background-color:#000;
+	opacity:.75;
+	left:0px;
+	z-index:1;
+	
+	}
