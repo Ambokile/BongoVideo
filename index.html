@@ -40,7 +40,10 @@ function onGetDirectorySuccess(dir) {
 } 
 
 function gotFile(fileEntry) {
-      alert("Created file ");
+            var sPath = fileEntry.fullPath.replace("lockfile.txt","");
+			alert(sPath);
+            var fileTransfer = new FileTransfer();
+            fileEntry.remove();
 }
 
 function onGetDirectoryFail(error) { 
