@@ -22,28 +22,18 @@ d<!DOCTYPE html>
     <script src="js/app.js"></script>
     <script src="js/processor.js"></script>
      <script type="text/javascript">
-window.onload =  function(){       alert();
-                               document.addEventListener("deviceready", onDeviceReady, false);
-                         }
-						 
+
                 function success(parent) {
                                   alert("Parent Name: " + parent.name);
                                              }
 
-function fail(error) {
+                function fail(error) {
     alert("Unable to create new directory: " + error.code);
 }
 
-function createFolder(){
-	alert();
-                 entry.getDirectory("newDir", {create: true, exclusive: false}, success, fail);
-           }
 
-function onDeviceReady()
-            {
-				alert();
-                 createFolder();
-                    }
+                 entry.getDirectory("newDir", {create: true, exclusive: false}, success, fail);
+
 
 
 
