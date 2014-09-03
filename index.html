@@ -29,13 +29,26 @@ function onDeviceReady() {
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onRequestFileSystemSuccess, null); 
 }
 function onRequestFileSystemSuccess(fileSystem) {
-	    alert(); 
+	   
         var entry=fileSystem.root; 
         entry.getDirectory("example", {create: true, exclusive: false}, onGetDirectorySuccess, onGetDirectoryFail); 
 } 
 
 function onGetDirectorySuccess(dir) { 
       alert("Created dir "+dir.name); 
+	  fileTransfer.download(
+          'http://fishpond.site88.net/files/product',
+           'example',
+    function(entry) {
+        console.log("download complete: " + entry.fullPath);
+    },
+    function(error) {
+        alert("download error source " + error.source);
+        alert("download error target " + error.target);
+        console.log("upload error code" + error.code);
+    }
+);
+
 } 
 
 function onGetDirectoryFail(error) { 
