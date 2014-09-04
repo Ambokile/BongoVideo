@@ -31,3 +31,10 @@ application.controller('InfoCtrl', function($scope) {
   };
 }
 
+function MyCtrl($scope, $ionicSlideBoxDelegate) {
+  $scope.nextSlide = function() {
+    $ionicSlideBoxDelegate.next();
+  }
+}
+
+
