@@ -8,15 +8,15 @@ var application = angular.module('ionicApp', ['ionic'])
 application.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-  .state('info', {
+  .state('filamu', {
     url: '/',
-    templateUrl: 'info.html',
-    controller: 'InfoCtrl'
+    templateUrl: 'filamu.html',
+   // controller: 'InfoCtrl'
   })
-  .state('user', {
-    url: '/user',
-    templateUrl: 'add_user.html',
-    controller: 'UserCtrl'
+  .state('music', {
+    url: '/music',
+    templateUrl: 'music.html',
+    //controller: 'UserCtrl'
   })
   $urlRouterProvider.otherwise("/");
 

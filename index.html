@@ -75,7 +75,7 @@ function onGetDirectoryFail(error) {
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
 
-    <script id="info.html" type="text/ng-template"> 
+    <script id="filamu.html" type="text/ng-template"> 
      
 	    
 	       <ion-side-menus>
@@ -89,15 +89,13 @@ function onGetDirectoryFail(error) {
 						   
                           <h1 class="title" style = "margin-left:10%;">Filamu</h1>
 						
-						   <button class="button button-icon icon-right ion-ios7-musical-notes" onclick = "onDeviceReady()" ></button>
+						   <a class="button button-icon icon-right ion-ios7-musical-notes" href="#/music"></a>
                         </ion-header-bar>
-				<ion-content>
+				<ion-content  ng-controller="InfoCtrl">
 						
   
-           <div   style = "padding:2%; background-color:#C0C0C0;">
-		          <ion-slide-box id ="info">
-				      
-				  </ion-slide-box>
+           <div id ="info" style = "padding:2%; background-color:#C0C0C0;">
+		         
 		     </div> 
 			 <div id= "status">
 			 </div>
@@ -109,21 +107,67 @@ function onGetDirectoryFail(error) {
 
   <!-- Left menu -->
            <ion-side-menu side="left">
-               <ion-header-bar class = "bar bar-positive">
+               <ion-header-bar class = "bar bar-balanced">
        
-        <h1 class="title" style="font-weight:bold;">Matangazo</h1>
+        <h1 class="title" style="font-weight:bold;">Maktaba</h1>
 		<button class="button button-icon icon ion-chevron-right" menu-close id = "first_button"></button>
      </ion-header-bar>
-	 <ion-header-bar class = "bar-subheader bar-light">
-        <h1 class="title" style="font-weight:bold;">Weka matamgazo</h1>
-     </ion-header-bar>
       <ion-content>
-			      
+			     <div id ="info" style = "padding:2%; background-color:#fff; ">     
+		         </div>  
       </ion-content>
            </ion-side-menu>
 </ion-side-menus>
       </ion-view>
     </script>
+   
+   
+   
+   <script id="music.html" type="text/ng-template"> 
+      
+	       <ion-side-menus>
+		   
+  <!-- Center content -->
+            
+				<ion-side-menu-content ng-controller="ContentController">
+                           <ion-header-bar class="bar bar-balanced">
+			          <a class="button button-icon icon-right ion-film-marker" href="#/filamu"></a>
+			              
+                          <h1 class="title" style = "margin-left:10%;">Music</h1>
+						 <button class="button button-icon icon ion-ios7-people" menu-toggle="right"></button>
+						   
+						 
+                        </ion-header-bar>
+				<ion-content>
+						
+  
+           <div id ="info" style = "padding:2%; background-color:#C0C0C0;">
+		         
+		     </div> 
+			 <div id= "status">
+			 </div>
+			 </ion-content>
+			 <ion-footer-bar class="bar bar-light" style="padding:2;">
+                        </ion-footer-bar>
+             </ion-side-menu-content>
+			  
+
+  <!-- right menu -->
+           <ion-side-menu side="right">
+               <ion-header-bar class = "bar bar-balanced">
+       <button class="button button-icon icon ion-chevron-left" menu-close ></button>
+        <h1 class="title" style="font-weight:bold;">Maktaba</h1>
+		
+     </ion-header-bar>
+      <ion-content>
+			     <div id ="info" style = "padding:2%; background-color:#fff; ">     
+		         </div>  
+      </ion-content>
+           </ion-side-menu>
+</ion-side-menus>
+      </ion-view>
+    </script>
+   
    
    
   </body>
