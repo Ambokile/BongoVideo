@@ -25,16 +25,17 @@ application.controller('InfoCtrl', function($scope) {
   console.log('InfoCtrl');
 });
    
+   
    function ContentController($scope, $ionicSideMenuDelegate) {
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
 }
-
-function MyCtrl($scope, $ionicSlideBoxDelegate) {
+ 
+  function MyCtrl($scope, $ionicSlideBoxDelegate) {
   $scope.nextSlide = function() {
     $ionicSlideBoxDelegate.next();
   }
 }
-
-
+ 
+ 
