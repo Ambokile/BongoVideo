@@ -10,7 +10,7 @@
  xmlhttp.onreadystatechange = function(){
 	 if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
 		
-		document.querySelector("#info").innerHTML = xmlhttp.responseText;
+		document.querySelector("#info").innerHTML ="<ion-slide-box><ion-slide>" + xmlhttp.responseText + "<ion-slide><ion-slide-box><ion-slide>Ambokile</ion-slide>";
 	 } 
 			 
 			                       };
