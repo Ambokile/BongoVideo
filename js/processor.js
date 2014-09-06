@@ -10,9 +10,9 @@
  xmlhttp.onreadystatechange = function(){
 	 if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
 		
-		if(document.querySelector(".slider_media").innerHTML = xmlhttp.responseText){
-			    alert(xmlhttp.responseText);
-			}
+		document.querySelector(".slider_media").innerHTML = xmlhttp.responseText
+			   
+			
 	 } 
 			 
 			                       };
