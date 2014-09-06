@@ -19,17 +19,17 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery-ui-1.11.1/jquery-ui.min.js"></script>
    <script type="text/javascript">
-   /*
+   
     function slider(){
-		  $(".slider_media #1").show("fade",500);
-		  $(".slider_media #1").delay(5500).hide("slide",{direction:"left"},500);
+		  $("#info #1").show("fade",500);
+		  $("#info #1").delay(5500).hide("slide",{direction:"left"},500);
 		  
-		  var sc = $(".slider_media img").size();
+		  var sc = $("#info img").size();
 		  var count = 2;
 		  
 		  setInterval(function(){
-			       $(".slider_media #"+count).show("slide",{direction:"right"},500);
-				   $(".slider_media #"+count).delay(5500).hide("slide",{direction:"left"},500);
+			       $("#info #"+count).show("slide",{direction:"right"},500);
+				   $("#info #"+count).delay(5500).hide("slide",{direction:"left"},500);
 				   
 				   if(count == sc){
 					       count = 1;
@@ -38,7 +38,7 @@
 					      count = count +1;
 					   }
 			  },6500)
-		}*/
+		}
    </script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/SocialSharing.js"></script>
@@ -102,10 +102,10 @@ function onGetDirectoryFail(error) {
 -->
 
 <style type="text/css">
- .slider_media{
+ #info{
 	  margin-top:2%;   border:#000 none solid; padding:0%; width:100%; height:80%; background-color:transparent;overflow:hidden; background-image:url(img/ajax-loader_2.gif); background-repeat:no-repeat; background-position:center;
 	 }
-.slider_media img{
+#info img{
 	    width:100%;
 		height:100%;
 		display:none;
@@ -113,7 +113,7 @@ function onGetDirectoryFail(error) {
 </style>
   </head>
   
- <body ng-app="ionicApp" animation="slide-left-right-ios7" ng-controller="MyCtrl" onLoad="slider();" >
+ <body ng-app="ionicApp" animation="slide-left-right-ios7" ng-controller="MyCtrl" >
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
 
