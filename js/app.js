@@ -13,15 +13,10 @@ application.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'filamu.html',
    // controller: 'InfoCtrl'
   })
-  .state('filamu.music', {
+  .state('music', {
     url: '/music',
-	views: {
-        'music-filamu': {
-           templateUrl: 'music.html',
-		
+    templateUrl: 'music.html',
     //controller: 'UserCtrl'
-		}
-	}
   })
   $urlRouterProvider.otherwise("/");
 

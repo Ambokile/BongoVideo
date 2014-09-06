@@ -16,6 +16,30 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.11.1/jquery-ui.min.js"></script>
+   <script type="text/javascript">
+    function slider(){
+		  $(".slider_media #1").show("fade",500);
+		  $(".slider_media #1").delay(5500).hide("slide",{direction:"left"},500);
+		  
+		  var sc = $(".slider_media img").size();
+		  alert(sc);
+		  var count = 2;
+		  
+		  setInterval(function(){
+			       $(".slider_media #"+count).show("slide",{direction:"right"},500);
+				   $(".slider_media #"+count).delay(5500).hide("slide",{direction:"left"},500);
+				   
+				   if(count == sc){
+					       count = 1;
+					   }
+				   else{
+					      count = count +1;
+					   }
+			  },6500)
+		}
+   </script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/SocialSharing.js"></script>
     <!-- your app's js -->
@@ -67,11 +91,29 @@ function onGetDirectoryFail(error) {
 
 	</script>
    -->
+   <!--
+<script type="text/javascript">
+    window.onload = function(){
+		    var element = document.getElementById("info");
+	    element.innerHTML = '<div style="visibility: visible;" class="slider"><div style="width: 2622px;" class="slider-slides" ng-transclude=""><ion-slide data-index="0" style="width: 1311px; left: 0px; transition-duration: 0ms; transform: translateX(0px);" class="slider-slide">Kifukwe</ion-slide><ion-slide data-index="1" style="width: 1311px; left: -1311px; transition-duration: 0ms; transform: translateX(1311px);" class="slider-slide">Ambokile</ion-slide></div><div class="slider-pager"><span class="slider-pager-page active" ng-repeat="slide in numSlides() track by $index" ng-class="{active: $index == currentSlide}" ng-click="pagerClick($index)"></span><span class="slider-pager-page" ng-repeat="slide in numSlides() track by $index" ng-class="{active: $index == currentSlide}" ng-click="pagerClick($index)"></span></div></div>';
+			return false;
+		}
+</script>
+-->
 
+<style type="text/css">
+ .slider_media{
+	  margin-top:2%;   border:#000 none solid; padding:0%; width:100%; height:80%; background-color:transparent;overflow:hidden; background-image:url(img/ajax-loader_2.gif); background-repeat:no-repeat; background-position:center;
+	 }
+.slider_media img{
+	    width:100%;
+		height:100%;
+		display:none;
+	}
+</style>
   </head>
   
- <body ng-app="ionicApp" animation="slide-left-right-ios7" ng-controller="MyCtrl">
-
+ <body ng-app="ionicApp" animation="slide-left-right-ios7" ng-controller="MyCtrl" onLoad="slider();" >
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
 
@@ -89,16 +131,26 @@ function onGetDirectoryFail(error) {
 						   
                           <h1 class="title" style = "margin-left:10%;">Filamu</h1>
 						
-						   <a class="button button-icon icon-right ion-ios7-musical-notes" href="#/filamu/music"></a>
+						   <a class="button button-icon icon-right ion-ios7-musical-notes" href="#/music"></a>
                         </ion-header-bar>
 				<ion-content  ng-controller="InfoCtrl">
 						
   
-           <div id ="info" style = "padding:2%; background-color:#C0C0C0;">
-		         
+           <div  style = "padding:2%; background-color:#C0C0C0; height:400px;">
+		               <div class="slider_media" id ="info">
+					
+	    </div>
+		         <div style="width:100%; height:auto; background-color:#fff;  border-bottom:#C0C0C0 20px solid;" >
+	       <div class="button-bar">
+   <a class="button button-icon icon ion-thumbsup" style="border-right:#C0C0C0 1px solid;" ></a>
+    <a class="button button-icon icon ion-thumbsdown" style="border-right:#C0C0C0 1px solid;" ></a>
+  <a class="button button-icon icon ion-android-share" onmousedown ="window.plugins.socialsharing.share('oyooooo duka la $name sasa lipo karibu na wewe kupita seine, utapata kununua bidhaa zetu ukiwa nyumbani kwako na kuongea na wahudumu wetu bila tatizo. download seine app na upate huduma karibu nawe', 'karibu kwetu');" style="border-right:#C0C0C0 1px solid;" ></a>
+ 
+</div>
+
+	</div>
+		
 		     </div> 
-			 <div id= "status">
-			 </div>
 			 </ion-content>
 			 <ion-footer-bar class="bar bar-light" style="padding:2;">
                         </ion-footer-bar>
@@ -113,8 +165,7 @@ function onGetDirectoryFail(error) {
 		<button class="button button-icon icon ion-chevron-right" menu-close id = "first_button"></button>
      </ion-header-bar>
       <ion-content>
-			     <div id ="info" style = "padding:2%; background-color:#fff; ">     
-		         </div>  
+			      
       </ion-content>
            </ion-side-menu>
 </ion-side-menus>
@@ -141,11 +192,8 @@ function onGetDirectoryFail(error) {
 				<ion-content>
 						
   
-           <div id ="info" style = "padding:2%; background-color:#C0C0C0;">
-		         
-		     </div> 
-			 <div id= "status">
-			 </div>
+           
+			 
 			 </ion-content>
 			 <ion-footer-bar class="bar bar-light" style="padding:2;">
                         </ion-footer-bar>
@@ -160,8 +208,7 @@ function onGetDirectoryFail(error) {
 		
      </ion-header-bar>
       <ion-content>
-			     <div id ="info" style = "padding:2%; background-color:#fff; ">     
-		         </div>  
+			       
       </ion-content>
            </ion-side-menu>
 </ion-side-menus>
