@@ -10,7 +10,7 @@
  xmlhttp.onreadystatechange = function(){
 	 if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
 		
-		document.querySelector("#info").innerHTML = xmlhttp.responseText;
+		document.querySelector(".slider_media").innerHTML = xmlhttp.responseText;
 	 } 
 			 
 			                       };
@@ -20,9 +20,7 @@ xmlhttp.send();
     
 
 function onDeviceReady(){
-     pictureSource=navigator.camera.PictureSourceType;
-     destinationType=navigator.camera.DestinationType;
-         
+ 
              setTimeout(grap_info,10);
 			 
           }
