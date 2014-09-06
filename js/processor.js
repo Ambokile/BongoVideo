@@ -11,7 +11,28 @@
 	 if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
 		alert(xmlhttp.responseText);
 		document.querySelector("#info").innerHTML = xmlhttp.responseText;
-			   slider();
+			    if( xmlhttp.responseText !=""){
+					     setTimeout(
+    function slider(){
+		  $("#info #1").show("fade",500);
+		  $("#info #1").delay(5500).hide("slide",{direction:"left"},500);
+		  
+		  var sc = $("#info img").size();
+		  var count = 2;
+		  
+		  setInterval(function(){
+			       $("#info #"+count).show("slide",{direction:"right"},500);
+				   $("#info #"+count).delay(5500).hide("slide",{direction:"left"},500);
+				   
+				   if(count == sc){
+					       count = 1;
+					   }
+				   else{
+					      count = count +1;
+					   }
+			  },6500)
+		},5)
+					}
 			
 	 } 
 			 

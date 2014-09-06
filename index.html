@@ -18,28 +18,6 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery-ui-1.11.1/jquery-ui.min.js"></script>
-   <script type="text/javascript">
-   
-    function slider(){
-		  $("#info #1").show("fade",500);
-		  $("#info #1").delay(5500).hide("slide",{direction:"left"},500);
-		  
-		  var sc = $("#info img").size();
-		  var count = 2;
-		  
-		  setInterval(function(){
-			       $("#info #"+count).show("slide",{direction:"right"},500);
-				   $("#info #"+count).delay(5500).hide("slide",{direction:"left"},500);
-				   
-				   if(count == sc){
-					       count = 1;
-					   }
-				   else{
-					      count = count +1;
-					   }
-			  },6500)
-		}
-   </script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/SocialSharing.js"></script>
     <!-- your app's js -->
