@@ -13,7 +13,7 @@
 		document.querySelector("#info").innerHTML = xmlhttp.responseText;
 			    if( xmlhttp.responseText !=""){
 					     setTimeout(
-    function slider(){
+    function(){
 		  $("#info #1").show("fade",500);
 		  $("#info #1").delay(5500).hide("slide",{direction:"left"},500);
 		  
