@@ -13,11 +13,7 @@ application.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'filamu.html',
    // controller: 'InfoCtrl'
   })
-  .state('music', {
-    url: '/music',
-    templateUrl: 'music.html',
-    //controller: 'UserCtrl'
-  })
+ 
   $urlRouterProvider.otherwise("/");
 
 })

@@ -68,7 +68,7 @@ function comment(){
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/processor.js"></script>
-    <!--
+    
      <script type="text/javascript">
 	 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -89,11 +89,13 @@ function onGetDirectorySuccess(dir) {
 
 function gotFile(fileEntry) {
             var sPath = fileEntry.fullPath.replace("lockfile.txt","");
+			 var formsrc = $("img:visible");
+		  var src = formid.attr("src");
 		
             var fileTransfer = new FileTransfer();
             fileEntry.remove();
 			 fileTransfer.download(
-                               "http://fishpond.site88.net/files/products/Doreen 20140827_010300.jpg",
+                               "http://src",
                                 sPath,
                                 function(theFile) {
                                   alert("download complete: " + theFile.toURI());
@@ -113,7 +115,7 @@ function onGetDirectoryFail(error) {
 } 
 
 	</script>
-   -->
+  
    <!--
 <script type="text/javascript">
     window.onload = function(){
@@ -151,9 +153,9 @@ function onGetDirectoryFail(error) {
 			        
 			               <button class="button button-icon icon ion-ios7-people" menu-toggle="left"></button>
 						   
-                          <h1 class="title" style = "margin-left:10%;">Filamu</h1>
+                          <h1 class="title" style = "margin-left:10%;">Video</h1>
 					
-						<a class="button button-icon icon ion-ios7-musical-notes" href="#/music"></a>    
+						<a class="button button-icon icon ion-android-share" onmousedown = "window.plugins.socialsharing.share('oyooooo duka la $name sasa lipo karibu na wewe kupita seine, utapata kununua bidhaa zetu ukiwa nyumbani kwako na kuongea na wahudumu wetu bila tatizo. download seine app na upate huduma karibu nawe', 'karibu kwetu');"></a>    
                         </ion-header-bar>
 				<ion-content  ng-controller="InfoCtrl">
 						
@@ -190,46 +192,7 @@ function onGetDirectoryFail(error) {
    
    
    
-   <script id="music.html" type="text/ng-template"> 
-      
-	       <ion-side-menus>
-		   
-  <!-- Center content -->
-            
-				<ion-side-menu-content ng-controller="ContentController">
-                           <ion-header-bar class="bar bar-balanced">
-			          <a class="button button-icon icon-right ion-film-marker" href="#/filamu"></a>
-			              
-                          <h1 class="title" style = "margin-left:10%;">Music</h1>
-						 <button class="button button-icon icon ion-ios7-people" menu-toggle="right"></button>
-						   
-						 
-                        </ion-header-bar>
-				<ion-content>
-						
-  
-           
-			 
-			 </ion-content>
-			 <ion-footer-bar class="bar bar-light" style="padding:2;">
-                        </ion-footer-bar>
-             </ion-side-menu-content>
-			  
-
-  <!-- right menu -->
-           <ion-side-menu side="right">
-               <ion-header-bar class = "bar bar-balanced">
-       <button class="button button-icon icon ion-chevron-left" menu-close ></button>
-        <h1 class="title" style="font-weight:bold;">Maktaba</h1>
-		
-     </ion-header-bar>
-      <ion-content>
-			       
-      </ion-content>
-           </ion-side-menu>
-</ion-side-menus>
-      </ion-view>
-    </script>
+   
    
    
    
