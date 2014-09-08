@@ -47,6 +47,17 @@
 						  $("#info #"+count).delay(500).show("slide",{direction:"right"},"500");}
 					
 		}
+		
+function search_eng(){
+	   var footer = document.querySelector("#footer_eng");
+	   footer.innerHTML = "<label class=\"item item-input\"><i class=\"icon ion-search placeholder-icon\"></i><input type=\"text\" placeholder=\"tafuta filamu\" style=\"\"></label><a class=\"button button-icon icon ion-arrow-left-c\" style=\"border-right:#C0C0C0 1px solid;\"   onclick = \"home_tab()\"></a><a class=\"button button-icon icon ion-ios7-arrow-back\" style=\"border-right:#C0C0C0 1px solid;\"   onclick = \"sliderLeft()\"></a><a class=\"button button-icon icon ion-ios7-arrow-forward\" onclick = \"sliderRight()\" ></a>";
+
+	}
+function home_tab(){
+	   var footer = document.querySelector("#footer_eng");
+	   footer.innerHTML = " <a class=\"button button-icon icon ion-ios7-arrow-back\" style=\"border-right:#C0C0C0 1px solid;\"   onclick = \"sliderLeft()\"></a><a class=\"button button-icon icon ion-thumbsup\" style=\"border-right:#C0C0C0 1px solid;\" ></a><a class=\"button button-icon icon ion-android-search\" style=\"border-right:#C0C0C0 1px solid;\" onclick =\" search_eng();\" ></a><a class=\"button button-icon icon ion-ios7-arrow-forward\" onclick = \"sliderRight()\" ></a>";
+
+	}
     </script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/SocialSharing.js"></script>
@@ -126,8 +137,6 @@ function onGetDirectoryFail(error) {
 
 
     <script id="filamu.html" type="text/ng-template"> 
-     
-	    
 	       <ion-side-menus>
 		   
   <!-- Center content -->
@@ -138,8 +147,8 @@ function onGetDirectoryFail(error) {
 			               <button class="button button-icon icon ion-ios7-people" menu-toggle="left"></button>
 						   
                           <h1 class="title" style = "margin-left:10%;">Filamu</h1>
-						
-						   <a class="button button-icon icon-right ion-ios7-musical-notes" href="#/music"></a>
+					
+						<a class="button button-icon icon ion-ios7-musical-notes" href="#/music"></a>    
                         </ion-header-bar>
 				<ion-content  ng-controller="InfoCtrl">
 						
@@ -152,9 +161,10 @@ function onGetDirectoryFail(error) {
 		     </div> 
 			 </ion-content>
 			 <ion-footer-bar class="bar bar-balanced">
-			 <div class = "button-bar">
+			 <div class = "button-bar" id = "footer_eng">
    <a class="button button-icon icon ion-ios7-arrow-back" style="border-right:#C0C0C0 1px solid;"   onclick = "sliderLeft()"></a>
     <a class="button button-icon icon ion-thumbsup" style="border-right:#C0C0C0 1px solid;" ></a>
+	 <a class="button button-icon icon ion-android-search" style="border-right:#C0C0C0 1px solid;" onclick = search_eng(); ></a>
   <a class="button button-icon icon ion-ios7-arrow-forward" onclick = "sliderRight()" ></a>
   </div>
                         </ion-footer-bar>
