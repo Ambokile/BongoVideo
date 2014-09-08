@@ -62,6 +62,12 @@ function home_tab(){
 function comment(){
 	  
 	}
+function share(){
+	 var formid = $("img:visible");
+		  var src_img = formid.attr("src");
+		  
+	window.plugins.socialsharing.share(null, null, src_img, null);
+                   }
     </script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/SocialSharing.js"></script>
@@ -155,7 +161,7 @@ function onGetDirectoryFail(error) {
 						   
                           <h1 class="title" style = "margin-left:10%;">Video</h1>
 					
-						<a class="button button-icon icon ion-android-share" onmousedown = "window.plugins.socialsharing.share(null, null, 'https://www.google.nl/images/srpr/logo4w.png', null)"></a>    
+						<a class="button button-icon icon ion-android-share" onmousedown = "share();"></a>    
                         </ion-header-bar>
 				<ion-content  ng-controller="InfoCtrl">
 						
