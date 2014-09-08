@@ -19,26 +19,32 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery-ui-1.11.1/jquery-ui.min.js"></script>
     <script type="text/javascript">
-        function slider(){
-		 
-		  $("#info #1").delay(5500).hide("slide",{direction:"left"},500);
-		  
-		  
-		  var sc = $("#info img").size();
-		  var count = 2;
-		  
-		  setInterval(function(){
-			       $("#info #"+count).show("slide",{direction:"right"},500);
-				   $("#info #"+count).delay(5500).hide("slide",{direction:"left"},500);
-				   
-				   if(count == sc){
-					       count = 1;
-					   }
-				   else{
-					      count = count +1;
-					   }
-			  },6500);
-			  
+        function sliderLeft(){
+		  var formid = $("img:visible");
+		  var count = formid.attr("id");
+		    if(count == 1){
+				
+				}
+			 else{
+			     $("#info #"+count).hide("slide",{direction:"Right"},"500");
+				 count = count -1;
+				 $("#info #"+count).show("slide",{direction:"left"},"500");
+				     }
+					
+		                  }
+	  function sliderRight(){
+		  var formid = $("img:visible");
+		  var count = formid.attr("id");
+	           var sc = $("#info img").size();
+			    if(count == sc){
+					
+					}
+					
+			    else{
+					     $("#info #"+count).hide("slide",{direction:"left"},"500");
+						 count = count +1;
+						  $("#info #"+count).show("slide",{direction:"right"},"500");}
+					
 		}
     </script>
     <script type="text/javascript" src="cordova.js"></script>
@@ -138,21 +144,15 @@ function onGetDirectoryFail(error) {
 						
   
            <div id= "info"  style = "padding:2%; background-color:#C0C0C0; height:400px;">
-		           <img src="img/Jellyfish.jpg" width="100%" height = "100%" id = "1" />
-				   <img src="img/Jellyfish.jpg" width="100%" height = "100%" id = "2"/>
-				   <img src="img/Jellyfish.jpg" width="100%" height = "100%" id = "3"/>
-				   <img src="img/Jellyfish.jpg" width="100%" height = "100%" id = "4"/>
+		           
 		     </div> 
 			 </ion-content>
-			 <ion-footer-bar class="bar bar-light" style="padding:2;">
-			 
-			       
-	       <div class="button-bar">
-   <a class="button button-icon icon ion-thumbsup" style="border-right:#C0C0C0 1px solid;" onclick = "slider();" ></a>
-    <a class="button button-icon icon ion-thumbsdown" style="border-right:#C0C0C0 1px solid;" ></a>
-  <a class="button button-icon icon ion-android-share" onmousedown ="window.plugins.socialsharing.share('oyooooo duka la $name sasa lipo karibu na wewe kupita seine, utapata kununua bidhaa zetu ukiwa nyumbani kwako na kuongea na wahudumu wetu bila tatizo. download seine app na upate huduma karibu nawe', 'karibu kwetu');" style="border-right:#C0C0C0 1px solid;" ></a>
- 
-</div>
+			 <ion-footer-bar class="bar bar-light" style="">
+			 <div class = "button-bar">
+   <a class="button button-icon icon ion-ios7-arrow-back" style="border-right:#C0C0C0 1px solid;" onclick = "sliderRight()" ></a>
+    <a class="button button-icon icon ion-thumbsup" style="border-right:#C0C0C0 1px solid;" ></a>
+  <a class="button button-icon icon ion-ios7-arrow-forward"  onclick = "sliderLeft()"></a>
+  </div>
                         </ion-footer-bar>
              </ion-side-menu-content>
 			  
