@@ -136,21 +136,11 @@ function onDeviceReady() {
 		height:100%;
 		display:inline;
 	}
- 
-a:hover{
-	     background-color:#00f;
-		 color:#fff;
-	}
-.dark{
-	   background-color:#000000;
-	   opacity:.75;
-	   color:#fff;
-	}
+
 </style>
   </head>
   
  <body ng-app="ionicApp" animation="slide-left-right-ios7" ng-controller="MyCtrl" >
-    
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
 
@@ -189,39 +179,13 @@ a:hover{
 
   <!-- Left menu -->
            <ion-side-menu side="left">
-      <ion-content class = "dark">
-	      
-		      <div class="list">
-
-  <a class="item item-icon-left" href="#">
-    
-  </a>
-  <a class="item item-icon-left" style = "background-color:transparent" href="#">
-    <i class="icon ion-email"></i>
-    Check mail
-  </a>
-  <a class="item item-icon-left item-icon-right" style = "background-color:transparent" href="#">
-    <i class="icon ion-chatbubble-working"></i>
-    Call Ma
-    <i class="icon ion-ios7-telephone-outline"></i>
-  </a>
-
-  <a class="item item-icon-left" style = "background-color:transparent" href="#">
-    <i class="icon ion-mic-a"></i>
-    Record album
-    <span class="item-note">
-      Grammy
-    </span>
-  </a>
-
-  <a class="item item-icon-left" style = "background-color:transparent" href="#">
-    <i class="icon ion-person-stalker"></i>
-    Friends
-    <span class="badge badge-assertive">0</span>
-  </a>
-
-</div>
-	            
+               <ion-header-bar class = "bar bar-balanced">
+       
+        <h1 class="title" style="font-weight:bold;">Maktaba</h1>
+		<button class="button button-icon icon ion-chevron-right" menu-close id = "first_button"></button>
+     </ion-header-bar>
+      <ion-content>
+			      
       </ion-content>
            </ion-side-menu>
 </ion-side-menus>
