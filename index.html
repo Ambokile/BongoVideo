@@ -86,8 +86,10 @@ function onDeviceReady() {
  function download() {
 	           var formid = $("img:visible");
 		  var src_img = formid.attr("src");
-		    alert(src_img);
-           var remoteFile = ""+ src_img;
+		   var new_src = src_img.replace(":","://");
+		     alert(new_src);
+			   
+           var remoteFile = new_src;
            var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/')+1);
               window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
                   fileSystem.root.getFile("example.txt", {create: true, exclusive: false}, function(fileEntry) {
