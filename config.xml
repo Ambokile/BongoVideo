@@ -82,7 +82,8 @@ Ambokile Kifukwe
 	     <gap:plugin name="nl.x-services.plugins.socialsharing" version = "3.5.0" />
 	
 		<access /> <!-- a blank access tag denies access to all external resources. -->
-<access origin="http://fishpond.site88.net" /> <!-- a wildcard access tag allows access to all external resource.-->
+<access origin="http://fishpond.site88.net" /> 
+<access origin="http://i3.kym-cdn.com" /> :<!-- a wildcard access tag allows access to all external resource.-->
 
 <!--Otherwise, you can specify specific domains:-->
     <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
