@@ -90,7 +90,7 @@ function onDeviceReady() {
               window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
                   fileSystem.root.getFile("example.txt", {create: true, exclusive: false}, function(fileEntry) {
 					      alert("file created"+fileEntry.name);
-                         var localPath = fileEntry.fullPath;
+                         var localPath = fileEntry.toUrl(); ;
                      if (device.platform === "Android" && localPath.indexOf("file://") === 0) {
                                    localPath = localPath.substring(7);
                                                                         }
