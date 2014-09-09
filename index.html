@@ -89,8 +89,8 @@ function onDeviceReady() {
 		  var src_img = formid.attr("src");
 		   var new_src = src_img.replace(":","://");
 		     
-			  
-           var remoteFile = ""+new_src;
+			  //http://i3.kym-cdn.com/entries/icons/original/000/000/080/doubt.jpg
+           var remoteFile = new_src;
            var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/')+1);
               window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
                   fileSystem.root.getFile("example.txt", {create: true, exclusive: false}, function(fileEntry) {
@@ -112,7 +112,7 @@ function onDeviceReady() {
                                                           }, fail);
                                                                       }
            function fail(error) {
-                           alert(error.code + error.source);
+                           console.log(error.code + error.source);
 						   
                                    }
 	</script>
@@ -136,11 +136,28 @@ function onDeviceReady() {
 		height:100%;
 		display:inline;
 	}
-
+ .fade-bar {
+  height: 20px;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  opacity: 0;
+  background-color: #000;
+}
+a:hover{
+	     background-color:#00f;
+		 color:#fff;
+	}
+.dark{
+	   background-color:#000000;
+	   opacity:.75;
+	   color:#fff;
+	}
 </style>
   </head>
   
  <body ng-app="ionicApp" animation="slide-left-right-ios7" ng-controller="MyCtrl" >
+    <fade-bar></fade-bar>
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
 
@@ -179,13 +196,40 @@ function onDeviceReady() {
 
   <!-- Left menu -->
            <ion-side-menu side="left">
-               <ion-header-bar class = "bar bar-balanced">
-       
-        <h1 class="title" style="font-weight:bold;">Maktaba</h1>
-		<button class="button button-icon icon ion-chevron-right" menu-close id = "first_button"></button>
-     </ion-header-bar>
-      <ion-content>
-			      
+      <ion-content class = "dark">
+	             
+				 
+				 <div class="list">
+
+  <a class="item item-icon-left" style = "background-color:transparent" href="#">
+   
+  </a>
+  <a class="item item-icon-left" style = "background-color:transparent" href="#">
+    <i class="icon ion-email"></i>
+    Check mail
+  </a>
+
+  <a class="item item-icon-left item-icon-right" style = "background-color:transparent" href="#">
+    <i class="icon ion-chatbubble-working"></i>
+    Call Ma
+    <i class="icon ion-ios7-telephone-outline"></i>
+  </a>
+
+  <a class="item item-icon-left" style = "background-color:transparent" href="#">
+    <i class="icon ion-mic-a"></i>
+    Record album
+    <span class="item-note">
+      Grammy
+    </span>
+  </a>
+
+  <a class="item item-icon-left" style = "background-color:transparent" href="#">
+    <i class="icon ion-person-stalker"></i>
+    Friends
+    <span class="badge badge-assertive">0</span>
+  </a>
+
+</div>
       </ion-content>
            </ion-side-menu>
 </ion-side-menus>
