@@ -84,13 +84,15 @@ function onDeviceReady() {
 
 }
  function download() {
-	 
+	           var formid = $("img:visible");
+		  var src_img = formid.attr("src");
+		     alert(src_img);
            var remoteFile = "http://i3.kym-cdn.com/entries/icons/original/000/000/080/doubt.jpg";
            var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/')+1);
               window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
                   fileSystem.root.getFile("example.txt", {create: true, exclusive: false}, function(fileEntry) {
 					      alert("file created"+fileEntry.name);
-                         var localPath = fileEntry.toUrl(); ;
+                         var localPath = fileEntry.fullPath;
                      if (device.platform === "Android" && localPath.indexOf("file://") === 0) {
                                    localPath = localPath.substring(7);
                                                                         }
