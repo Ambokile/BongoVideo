@@ -28,6 +28,5 @@ application.controller('InfoCtrl', function($scope) {
   };
 }
  
-
  
  
