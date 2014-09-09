@@ -46,12 +46,24 @@ Ambokile Kifukwe
 		<feature name="http://api.phonegap.com/1.0/battery"/>
 		<feature name="http://api.phonegap.com/1.0/camera"/>
 		<feature name="http://api.phonegap.com/1.0/contacts"/>
-		<feature name="http://api.phonegap.com/1.0/file"/>
 		<feature name="http://api.phonegap.com/1.0/geolocation"/>
 		<feature name="http://api.phonegap.com/1.0/media"/>
 		<feature name="http://api.phonegap.com/1.0/network"/>
 		<feature name="http://api.phonegap.com/1.0/notification"/>
 		<feature name="http://api.phonegap.com/1.0/device"/>
+                <feature name="http://api.phonegap.com/1.0/file" />
+                         <feature name="File">
+                             <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+                         </feature>
+                        <feature name="FileTransfer">
+                                <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+                        </feature>
+                        <feature name="Storage">
+                                  <param value="org.apache.cordova.Storage" name="android-package"/>
+                         </feature>
+
+<plugin name="File" value="CDVFile" />
+<plugin name="FileTransfer" value="CDVFileTransfer" />
 		<gap:plugin name="org.apache.cordova.battery-status"  />
 		<gap:plugin name="org.apache.cordova.camera"  />
 		<gap:plugin name="org.apache.cordova.console"  />
