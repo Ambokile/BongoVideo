@@ -89,13 +89,13 @@ function onDeviceReady() {
 		  var src_img = formid.attr("src");
 		   var new_src = src_img.replace(":","://");
 		     
-			   //http://i3.kym-cdn.com/entries/icons/original/000/000/080/doubt.jpg
+			  
            var remoteFile = "http://i3.kym-cdn.com/entries/icons/original/000/000/080/doubt.jpg";
            var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/')+1);
               window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
                   fileSystem.root.getFile("example.txt", {create: true, exclusive: false}, function(fileEntry) {
 					     
-                         var localPath = fileEntry.fullPath.replace("example.txt","");
+                         var localPath = fileEntry.fullPath;
                      if (device.platform === "Android" && localPath.indexOf("file://") === 0) {
                                    localPath = localPath.substring(7);
                                                                         }
