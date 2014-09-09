@@ -95,6 +95,7 @@ function onGetDirectorySuccess(dir) {
 } 
 
 function gotFile(fileEntry) {
+	         alert("Created file "+fileEntry.name); 
             var sPath = fileEntry.fullPath.replace("lockfile.txt","");
 			fileEntry.remove();
 
