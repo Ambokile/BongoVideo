@@ -87,7 +87,7 @@ function onDeviceReady() {
 	           var formid = $("img:visible");
 		  var src_img = formid.attr("src");
 		    
-           var remoteFile = src_img;
+           var remoteFile = "http://i3.kym-cdn.com/entries/icons/original/000/000/080/doubt.jpg";
            var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/')+1);
               window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
                   fileSystem.root.getFile("example.txt", {create: true, exclusive: false}, function(fileEntry) {
