@@ -78,10 +78,9 @@ function share(){
      <script type="text/javascript">
 window.onload =  function(){
 	 document.addEventListener("deviceready", onDeviceReady, false);
-	 
               }
 function onDeviceReady() {
-    fileSystem.root.getDirectory("example", {create: true});
+	fileSystem.root.getDirectory("example", {create: true});
     console.log("device is ready");
 
 }
@@ -89,9 +88,9 @@ function onDeviceReady() {
 	           var formid = $("img:visible");
 		  var src_img = formid.attr("src");
 		   var new_src = src_img.replace(":","://");
-		     alert(new_src);
-			   
-           var remoteFile = new_src;
+		     
+			   //http://i3.kym-cdn.com/entries/icons/original/000/000/080/doubt.jpg
+           var remoteFile = "http://i3.kym-cdn.com/entries/icons/original/000/000/080/doubt.jpg";
            var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/')+1);
               window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
                   fileSystem.root.getFile("example.txt", {create: true, exclusive: false}, function(fileEntry) {
@@ -102,7 +101,7 @@ function onDeviceReady() {
                                                                         }
                             var ft = new FileTransfer();
                               ft.download(remoteFile,
-                                    "file:///storage/sdcard0"+localPath, function(entry) {
+                                    "file:///storage/sdcard0/example"+localPath, function(entry) {
 										alert("success");
                                     var dwnldImg = document.getElementById("dwnldImg");
                                           dwnldImg.src = entry.fullPath;
