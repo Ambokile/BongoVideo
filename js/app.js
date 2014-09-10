@@ -8,50 +8,41 @@ var application = angular.module('ionicApp', ['ionic'])
 application.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-  .state('filamu', {
+  .state('home', {
     url: '/',
-    templateUrl: 'filamu.html',
-   // controller: 'InfoCtrl'
+    templateUrl: 'home.html',
+   // controller: 'HomeCtrl'
   })
- 
- .state('video', {
-    url: '/video',
-    templateUrl: 'video.html',
-   
+  .state('info', {
+    url: '/info',
+    templateUrl: 'info.html',
+  // controller: 'HomeCtrl'
+  })
+  .state('friend', {
+    url: '/friend',
+    templateUrl: 'friend.html',
+  // controller: 'HomeCtrl'
   })
   
+  
+  .state('groups', {
+    url: '/groups',
+    templateUrl: 'groups.html',
+  // controller: 'HomeCtrl'
+  }) 
+  
+  .state('set', {
+    url: '/set',
+    templateUrl: 'set.html',
+  // controller: 'HomeCtrl'
+  }) 
   
   $urlRouterProvider.otherwise("/");
 
 })
-
-application.controller('InfoCtrl', function($scope, $ionicModal) {
-  $ionicModal.fromTemplateUrl('video.html', {
-    scope: $scope,
-    animation: 'slide-in-up'
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-  $scope.openModal = function() {
-    $scope.modal.show();
-  };
-  $scope.closeModal = function() {
-    $scope.modal.hide();
-  };
-  //Cleanup the modal when we're done with it!
-  $scope.$on('$destroy', function() {
-    $scope.modal.remove();
-  });
-  // Execute action on hide modal
-  $scope.$on('modal.hidden', function() {
-    // Execute action
-  });
-  // Execute action on remove modal
-  $scope.$on('modal.removed', function() {
-    // Execute action
-  });
+app_1.controller('HomeCtrl', function($scope) {
+  console.log('HomeCtrl');
 });
-
 
 
 

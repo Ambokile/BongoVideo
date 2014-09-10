@@ -148,12 +148,15 @@ function onDeviceReady() {
 </style>
   </head>
   
- <body ng-app="ionicApp" animation="slide-left-right-ios7" ng-controller="InfoCtrl">
+ <body ng-app="ionicApp" animation="slide-left-right-ios7" >
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
 
-    <script id="filamu.html" type="text/ng-template"> 
-	       <ion-side-menus>
+    
+ 
+ <script id ="home.html" type="text/ng-template">
+	     <ion-view title="DIT NOTES BODY">
+		 <ion-side-menus>
 		   
   <!-- Center content -->
             
@@ -191,22 +194,22 @@ function onDeviceReady() {
       <ion-content class = "dark">
 			      <div class="list" style = "margin-top:30%;">
     
-  <a class="item item-icon-left" style = "background-color:transparent" href="#/video">
+  <a class="item item-icon-left" style = "background-color:transparent" href="#/info">
     <i class="icon ion-ios7-contact"></i>
      Contacts
   </a>
-  <a class="item item-icon-left" style = "background-color:transparent"  href="#">
+  <a class="item item-icon-left" style = "background-color:transparent"  href="#/friend">
     <i class="icon ion-person-stalker"></i>
     Friends
     <span class="badge badge-assertive">0</span>
   </a>
-  <a class="item item-icon-left item-icon-right" style = "background-color:transparent"   href="#">
+  <a class="item item-icon-left item-icon-right" style = "background-color:transparent"   href="#/groups">
     <i class="icon ion-ios7-people"></i>
     Groups
     <i class="icon ion-load-d"></i>
   </a>
 
-  <a class="item item-icon-left" style = "background-color:transparent"  href="#">
+  <a class="item item-icon-left" style = "background-color:transparent"  href="#/set">
     <i class="icon ion-settings"></i>
     setting
     <span class="item-note">
@@ -249,20 +252,49 @@ function onDeviceReady() {
            </ion-side-menu>
 </ion-side-menus>
       </ion-view>
-    </script>
-  
-  <script id="video.html" type="text/ng-template">
-  <ion-modal-view>
-    <ion-header-bar>
-      <h1 class="title">My Modal title</h1>
-    </ion-header-bar>
-    <ion-content>
-      Hello!
-    </ion-content>
-  </ion-modal-view>
-</script>
- 
+      </script>
 
-   
+   <script id ="info.html" type="text/ng-template">
+       <ion-header-bar class="bar bar-balanced">
+                          <h1 class="title" style = "margin-left:10%;">Contacts</h1>  
+                        </ion-header-bar>
+	     
+    <ion-content>
+ 
+    </ion-content>
+	</script>
+    
+    <script id ="friend.html" type="text/ng-template">
+       <ion-header-bar class="bar bar-balanced">
+                          <h1 class="title" style = "margin-left:10%;">Friend</h1>  
+                        </ion-header-bar>
+	     
+    <ion-content>
+ 
+    </ion-content>
+	</script>
+    
+    <script id ="groups.html" type="text/ng-template">
+       <ion-header-bar class="bar bar-balanced">
+                          <h1 class="title" style = "margin-left:10%;">Groups</h1>  
+                        </ion-header-bar>
+	     
+    <ion-content>
+ 
+    </ion-content>
+	</script>
+    
+    <script id ="set.html" type="text/ng-template">
+       <ion-header-bar class="bar bar-balanced">
+                          <h1 class="title" style = "margin-left:10%;">setting</h1>  
+                        </ion-header-bar>
+	     
+    <ion-content>
+ 
+    </ion-content>
+	</script>
+    
+     
+    
   </body>
 </html>
