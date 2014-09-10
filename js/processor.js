@@ -1,7 +1,8 @@
 // JavaScript Document
 window.onload = function(){
- document.addEventListener("deviceready",onDeviceReady,false);
+          setTimeout(grap_info,10);
               }
+ document.addEventListener("deviceready",onDeviceReady,false);
 			  
 	function grap_info(){
 			var device_id = device.uuid;
