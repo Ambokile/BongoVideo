@@ -11,7 +11,7 @@ application.config(function($stateProvider, $urlRouterProvider) {
   .state('filamu', {
     url: '/',
     templateUrl: 'filamu.html',
-    controller: 'InfoCtrl'
+   // controller: 'InfoCtrl'
   })
  
  .state('video', {
@@ -25,18 +25,7 @@ application.config(function($stateProvider, $urlRouterProvider) {
 
 })
 
-application.controller('InfoCtrl', function($scope) {
-  console.log('InfoCtrl');
-});
-
-
- function ContentController($scope, $ionicSideMenuDelegate) {
-  $scope.toggleLeft = function() {
-    $ionicSideMenuDelegate.toggleLeft();
-  };
-}
- 
- application.controller('InfoCtrl', function($scope, $ionicModal) {
+application.controller('InfoCtrl', function($scope, $ionicModal) {
   $ionicModal.fromTemplateUrl('video.html', {
     scope: $scope,
     animation: 'slide-in-up'
@@ -63,3 +52,13 @@ application.controller('InfoCtrl', function($scope) {
   });
 });
 
+
+
+
+ function ContentController($scope, $ionicSideMenuDelegate) {
+  $scope.toggleLeft = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
+}
+ 
+ 

@@ -148,7 +148,7 @@ function onDeviceReady() {
 </style>
   </head>
   
- <body ng-app="ionicApp" animation="slide-left-right-ios7" >
+ <body ng-app="ionicApp" animation="slide-left-right-ios7" ng-controller="InfoCtrl">
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
 
@@ -166,7 +166,7 @@ function onDeviceReady() {
 					
 						<a class="button button-icon icon ion-android-share" onmousedown = "share();"></a>    
                         </ion-header-bar>
-				<ion-content  ng-controller="InfoCtrl">
+				<ion-content >
 						
   
            <div id= "info"  style = "padding:2%; background-color:#fff; height:400px;">
