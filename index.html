@@ -149,13 +149,14 @@ function onDeviceReady() {
   </head>
   
  <body ng-app="ionicApp" animation="slide-left-right-ios7" >
+ <ion-nav-bar class="bar-stable nav-title-slide-ios7 bar-positive"></ion-nav-bar>
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
 
     
  
  <script id ="home.html" type="text/ng-template">
-	     <ion-view title="DIT NOTES BODY">
+	     
 		 <ion-side-menus>
 		   
   <!-- Center content -->
@@ -192,24 +193,24 @@ function onDeviceReady() {
            <ion-side-menu side="left">
           
       <ion-content class = "dark">
-			      <div class="list" style = "margin-top:30%;">
+			      <div class="list" style = "margin-top:30%; border-style:none;">
     
-  <a class="item item-icon-left" style = "background-color:transparent" href="#/info">
+  <a class="item item-icon-left" style = "background-color:transparent;border-style:none;" href="#/info">
     <i class="icon ion-ios7-contact"></i>
      Contacts
   </a>
-  <a class="item item-icon-left" style = "background-color:transparent"  href="#/friend">
+  <a class="item item-icon-left" style = "background-color:transparent;border-style:none"  href="#/friend">
     <i class="icon ion-person-stalker"></i>
     Friends
     <span class="badge badge-assertive">0</span>
   </a>
-  <a class="item item-icon-left item-icon-right" style = "background-color:transparent"   href="#/groups">
+  <a class="item item-icon-left item-icon-right" style = "background-color:transparent;border-style:none"   href="#/groups">
     <i class="icon ion-ios7-people"></i>
     Groups
     <i class="icon ion-load-d"></i>
   </a>
 
-  <a class="item item-icon-left" style = "background-color:transparent"  href="#/set">
+  <a class="item item-icon-left" style = "background-color:transparent;border-style:none"  href="#/set">
     <i class="icon ion-settings"></i>
     setting
     <span class="item-note">
@@ -218,29 +219,29 @@ function onDeviceReady() {
   </a>
 
   
-           <div class="item item-icon-left" style = "background-color:#fff; color:#000; " >
+           <div class="item item-icon-left" style = "background-color:#fff; color:#000;border-style:none; " >
                    services
   </div>
     
 	
-	<a class="item item-icon-left item-icon-right" style = "background-color:transparent"   href="#">
+	<a class="item item-icon-left item-icon-right" style = "background-color:transparent;border-style:none"   href="#">
     <i class="icon ion-chatbubble-working"></i>
     Call Ma
     <i class="icon ion-ios7-telephone-outline"></i>
   </a>
   
-            <a class="item item-icon-left" style = "background-color:transparent" href="#">
+            <a class="item item-icon-left" style = "background-color:transparent;border-style:none" href="#">
     <i class="icon ion-ios7-chatboxes"></i>
     Chat
   </a>
 
   
 
-  <a class="item item-icon-left" style = "background-color:transparent"  href="#">
+  <a class="item item-icon-left" style = "background-color:transparent;border-style:none"  href="#">
     <i class="icon ion-android-camera"></i>
         camera
   </a>
-  <a class="item item-icon-left" style = "background-color:transparent"  href="#">
+  <a class="item item-icon-left" style = "background-color:transparent;border-style:none"  href="#">
     <i class="icon ion-map"></i>
         map
   </a>
@@ -251,10 +252,11 @@ function onDeviceReady() {
       </ion-content>
            </ion-side-menu>
 </ion-side-menus>
-      </ion-view>
+      
       </script>
 
    <script id ="info.html" type="text/ng-template">
+	       
        <ion-header-bar class="bar bar-balanced">
                           <h1 class="title" style = "margin-left:10%;">Contacts</h1>  
                         </ion-header-bar>
