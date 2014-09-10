@@ -11,22 +11,55 @@ application.config(function($stateProvider, $urlRouterProvider) {
   .state('filamu', {
     url: '/',
     templateUrl: 'filamu.html',
-   // controller: 'InfoCtrl'
+    controller: 'InfoCtrl'
   })
+ 
+ .state('video', {
+    url: '/video',
+    templateUrl: 'video.html',
+   
+  })
+  
   
   $urlRouterProvider.otherwise("/");
 
 })
+
 application.controller('InfoCtrl', function($scope) {
   console.log('InfoCtrl');
 });
-   
-   
-   function ContentController($scope, $ionicSideMenuDelegate) {
+
+
+ function ContentController($scope, $ionicSideMenuDelegate) {
   $scope.toggleLeft = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
 }
  
- 
- 
+ application.controller('InfoCtrl', function($scope, $ionicModal) {
+  $ionicModal.fromTemplateUrl('video.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $scope.openModal = function() {
+    $scope.modal.show();
+  };
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+  //Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+  });
+});
+
