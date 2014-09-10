@@ -116,7 +116,9 @@ function onDeviceReady() {
 						   
                                    }
 	</script>
-  
+ <script>
+
+</script>
    <!--
 <script type="text/javascript">
     window.onload = function(){
@@ -188,7 +190,7 @@ function onDeviceReady() {
           
       <ion-content class = "dark">
 			      <div class="list" style = "margin-top:30%;">
-
+    
   <a class="item item-icon-left" style = "background-color:transparent" href="#/filamu/info">
     <i class="icon ion-ios7-contact"></i>
      Contacts
@@ -213,10 +215,11 @@ function onDeviceReady() {
   </a>
 
   
-           <div class="item item-icon-left" style = "background-color:#fff; color:#000; ">
+           <div class="item item-icon-left" style = "background-color:#fff; color:#000; " id="accordion">
                    services
   </div>
-    <ion-scroll zooming="false" direction="y" style="height:auto">
+    
+	
 	<a class="item item-icon-left item-icon-right" style = "background-color:transparent"   href="#">
     <i class="icon ion-chatbubble-working"></i>
     Call Ma
@@ -238,42 +241,17 @@ function onDeviceReady() {
     <i class="icon ion-map"></i>
         map
   </a>
-  </ion-scroll>
+  </div>
+  
 </div>
+
       </ion-content>
            </ion-side-menu>
 </ion-side-menus>
       </ion-view>
     </script>
    
-   
-   <script id ="info.html" type="text/ng-template">
-	     <ion-view title="DIT NOTES BODY">
-		   <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
-        Back
-      </ion-nav-back-button>
-	  
-    <ion-content ng-controller="HomeCtrl">
- 
-    </ion-content>
-	</script>
-    
-     <script id ="send_info.html" type="text/ng-template">
-	     <ion-view title="DIT NOTES BODY">
-		   <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
-        Back
-      </ion-nav-back-button>
-	  
-    <ion-content ng-controller="HomeCtrl">
- 
-    </ion-content>
-	</script>
-    
-   
-   
-   
-   
-   
+
    
   </body>
 </html>
