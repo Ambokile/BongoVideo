@@ -13,7 +13,7 @@ application.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'filamu.html',
    // controller: 'InfoCtrl'
   })
- 
+  
   $urlRouterProvider.otherwise("/");
 
 })
