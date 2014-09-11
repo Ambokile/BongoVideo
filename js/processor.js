@@ -34,8 +34,15 @@ function onDeviceReady(){
 function contact(){
 	    
 	      var ref =  window.open('#info', '_blank', 'location=no'); 
-         ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
-         ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
+         ref.addEventListener('loadstart', function() { 
+		     
+			                       var options = new ContactFindOptions();
+                                   options.filter=""; 
+                                   var fields = ["displayName", "name"];
+                                   navigator.contacts.find(fields, onSuccess, onError, options);
+		 
+		  });
+         
 
 		  
 	}	
