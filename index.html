@@ -195,22 +195,22 @@ function onDeviceReady() {
       <ion-content class = "dark">
 			      <div class="list" style = "margin-top:30%; border-style:none;">
     
-  <a class="item item-icon-left" style = "background-color:transparent;border-style:none;" onclick = "window.open('#info', '_blank', 'location=no');">
+  <a class="item item-icon-left" style = "background-color:transparent;border-style:none;" onclick = "contact()">
     <i class="icon ion-ios7-contact"></i>
      Contacts
   </a>
-  <a class="item item-icon-left" style = "background-color:transparent;border-style:none"  href="#/friend">
+  <a class="item item-icon-left" style = "background-color:transparent;border-style:none" onclick = "friend()">
     <i class="icon ion-person-stalker"></i>
     Friends
     <span class="badge badge-assertive">0</span>
   </a>
-  <a class="item item-icon-left item-icon-right" style = "background-color:transparent;border-style:none"   href="#/groups">
+  <a class="item item-icon-left item-icon-right" style = "background-color:transparent;border-style:none" onclick = "groups();">
     <i class="icon ion-ios7-people"></i>
     Groups
     <i class="icon ion-load-d"></i>
   </a>
 
-  <a class="item item-icon-left" style = "background-color:transparent;border-style:none"  href="#/set">
+  <a class="item item-icon-left" style = "background-color:transparent;border-style:none" onclick = "set();">
     <i class="icon ion-settings"></i>
     setting
     <span class="item-note">

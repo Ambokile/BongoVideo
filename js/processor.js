@@ -31,9 +31,29 @@ function onDeviceReady(){
 			 
           }
        
-	
+function contact(){
+	   
+	      var ref =  window.open('#info', '_blank', 'location=no'); 
+	}	
    
+
+function groups(){
 	
+	       var ref =  window.open('#groups', '_blank', 'location=no');
+		
+	}
+
+function set(){
+	
+	       var ref =  window.open('#set', '_blank', 'location=no');
+		
+	}
+
+function friend(){
+	    
+		  var ref =  window.open('#friend', '_blank', 'location=no');
+		  
+	}
 
       
  
