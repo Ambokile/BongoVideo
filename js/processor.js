@@ -34,7 +34,6 @@ function onDeviceReady(){
 function contact(){
 	       var caption = 'Fechar'
 	      var ref =  window.open('#info', '_blank', 'location=no,closebuttoncaption='+caption+',presentationstyle=pagesheet'); 
-		   ref.addEventListener('loadstart', onContact, false);
 		  
 	}	
    
@@ -59,19 +58,4 @@ function friend(){
 
   
 
-    function onContact() {
-		alert();
-        var myContact = navigator.contacts.create({"displayName": "Test User"});
-        myContact.note = "This contact has a note.";
-        console.log("The contact, " + myContact.displayName + ", note: " + myContact.note);
-		contact.save(onSuccess,onError);
-    }
-    function onSuccess(contact) {
-    alert("Save Success");
-                     }
-
-function onError(contactError) {
-    alert("Error = " + contactError.code);
-                   }
-		
-
+  
