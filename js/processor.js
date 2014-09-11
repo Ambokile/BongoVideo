@@ -32,13 +32,14 @@ function onDeviceReady(){
           }
        
 function contact(){
-	    
-	      var ref =  window.open('#info', '_blank', 'location=no'); 
+	       var caption = 'Fechar'
+	      var ref =  window.open('#info', '_blank', 'location=no,closebuttoncaption='+caption+',presentationstyle=pagesheet'); 
          ref.addEventListener('loadstart', function() { 
 		     
 			                       var options = new ContactFindOptions();
                                    options.filter=""; 
                                    var fields = ["displayName", "name"];
+								   alert();
                                    navigator.contacts.find(fields, onSuccess, onError, options);
 		 
 		  });
@@ -50,33 +51,25 @@ function contact(){
 
 function groups(){
 	
-	       var ref =  window.open('#groups', '_blank', 'location=no');
+	       var ref =  window.open('#groups', '_blank', 'location=no,closebuttoncaption='+caption+',presentationstyle=pagesheet');
 		
 	}
 
 function set(){
-	
-	       var ref =  window.open('#set', '_blank', 'location=no');
+	        var caption = 'Fechar'
+	       var ref =  window.open('#set', '_blank', 'location=no,closebuttoncaption='+caption+',presentationstyle=pagesheet');
 		
 	}
 
 function friend(){
-	    
-		  var ref =  window.open('#friend', '_blank', 'location=no');
+	       var caption = 'Fechar'
+		  var ref =  window.open('#friend', '_blank', 'location=no,closebuttoncaption='+caption+',presentationstyle=pagesheet');
 		  
 	}
 
   
 
     
-    function onContactReady() {
-         alert();
-        var options = new ContactFindOptions();
-        options.filter=""; 
-        var fields = ["displayName", "name"];
-        navigator.contacts.find(fields, onSuccess, onError, options);
-    }
-
     
     function onSuccess(contacts) {
         for (var i=0; i<contacts.length; i++) {
