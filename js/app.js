@@ -16,7 +16,7 @@ application.config(function($stateProvider, $urlRouterProvider) {
   .state('info', {
     url: '/info',
     templateUrl: 'info.html',
-  // controller: 'HomeCtrl'
+  controller: 'HomeCtrl'
   })
   .state('friend', {
     url: '/friend',
@@ -40,7 +40,7 @@ application.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/");
 
 })
-app_1.controller('HomeCtrl', function($scope) {
+application.controller('HomeCtrl', function($scope) {
   console.log('HomeCtrl');
 });
 
