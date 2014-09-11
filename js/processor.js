@@ -39,8 +39,8 @@ function contact(){
 			                       var options = new ContactFindOptions();
                                    options.filter=""; 
                                    var fields = ["displayName", "name"];
-								   alert();
-                                   navigator.contacts.find(fields, onSuccess, onError, options);
+								   
+                                   navigator.contacts.find(fields, alert();, onError, options);
 		 
 		  });
          
