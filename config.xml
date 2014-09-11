@@ -92,6 +92,20 @@ Ambokile Kifukwe
                 <plugin name="FileTransfer" value="org.apache.cordova.FileTransfer" />
 
 	     <gap:plugin name="nl.x-services.plugins.socialsharing" version = "3.5.0" />
+                 android 
+              <feature name="InAppBrowser">
+                      <param name="android-package" value="org.apache.cordova.InAppBrowser" />
+              </feature>
+
+                   iOS
+
+             <feature name="InAppBrowser">
+                      <param name="ios-package" value="CDVInAppBrowser" />
+             </feature>
+
+             <feature name="InAppBrowser" />
+
+
              
 		
 <access origin="*" /> <!-- a wildcard access tag allows access to all external resource.-->
