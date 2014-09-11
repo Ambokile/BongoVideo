@@ -40,7 +40,7 @@ function contact(){
                                    options.filter=""; 
                                    var fields = ["displayName", "name"];
 								   
-                                   navigator.contacts.find(fields, alert(), onError, options);
+                                   navigator.contacts.find(fields, function(){alert();}, onError, options);
 		 
 		  });
          
