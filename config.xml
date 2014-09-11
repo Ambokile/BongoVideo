@@ -61,13 +61,22 @@ Ambokile Kifukwe
                         <feature name="Storage">
                                   <param value="org.apache.cordova.Storage" name="android-package"/>
                          </feature>
+               <feature name="Contacts">
+    <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
+</feature>
+                 <feature name="Contacts">
+    <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
+</feature>
+                <feature name="Contacts">
+    <param name="ios-package" value="CDVContacts" />
+</feature>
+
 
 <plugin name="File" value="CDVFile" />
 <plugin name="FileTransfer" value="CDVFileTransfer" />
 		<gap:plugin name="org.apache.cordova.battery-status"  />
 		<gap:plugin name="org.apache.cordova.camera"  />
 		<gap:plugin name="org.apache.cordova.console"  />
-		<gap:plugin name="org.apache.cordova.contacts"  />
 		<gap:plugin name="org.apache.cordova.device"  />
 		<gap:plugin name="org.apache.cordova.device-orientation"  />
 		<gap:plugin name="org.apache.cordova.device-motion"  />
@@ -116,4 +125,6 @@ Ambokile Kifukwe
 <access origin="http://phonegap.com" /> - allow any secure requests to http://phonegap.com/
 <access origin="http://phonegap.com" subdomains="true" /> - same as above, but including subdomains, such as http://build.phonegap.com/
 <access origin="http://phonegap.com" browserOnly="true" /> - only allows http://phonegap.com to be opened by the child browser.
+
+<gap:plugin name="org.apache.cordova.contacts"  />
 	</widget>

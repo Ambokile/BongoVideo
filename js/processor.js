@@ -34,17 +34,7 @@ function onDeviceReady(){
 function contact(){
 	       var caption = 'Fechar'
 	      var ref =  window.open('#info', '_blank', 'location=no,closebuttoncaption='+caption+',presentationstyle=pagesheet'); 
-         ref.addEventListener('loadstart', function() { 
-		     
-			                       var options = new ContactFindOptions();
-                                   options.filter=""; 
-                                   var fields = ["displayName", "name"];
-								   
-                                   navigator.contacts.find(fields, function(){alert();}, onError, options);
-		 
-		  });
-         
-
+		   ref.addEventListener("deviceready", onContact, false);
 		  
 	}	
    
@@ -69,19 +59,18 @@ function friend(){
 
   
 
-    
-    
-    function onSuccess(contacts) {
-        for (var i=0; i<contacts.length; i++) {
-            alert("Display Name = " + contacts[i].displayName);
-        }
+    function onContact() {
+        var myContact = navigator.contacts.create({"displayName": "Test User"});
+        myContact.note = "This contact has a note.";
+        console.log("The contact, " + myContact.displayName + ", note: " + myContact.note);
+		contact.save(onSuccess,onError);
     }
+    function onSuccess(contact) {
+    alert("Save Success");
+                     }
 
-    
-    function onError(contactError) {
-        alert('onError!');
-    }
-    
- 
+function onError(contactError) {
+    alert("Error = " + contactError.code);
+                   }
 		
 
