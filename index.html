@@ -17,37 +17,55 @@
 
     <!-- cordova script (this will be a 404 during development) -->
     <script type="text/javascript" src="js/jquery.js"></script>
-    
+     <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css">
+     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+     <script src="//code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui-1.11.1/jquery-ui.min.js"></script>
-    <script type="text/javascript">
-        function sliderLeft(){
-		  var formid = $("img:visible");
-		  var count = formid.attr("id");
-		  
-		    if(count == 1){
-				  count = 1;
-				}
-			 else{
-			     $("#info #"+count).hide("slide",{direction:"Right"},"fast");
-				 count--;
-				 $("#info #"+count).delay(500).show("slide",{direction:"left"},"fast");
-				     }
-					
-		                  }
-	  function sliderRight(){
-		  var formid = $("img:visible");
-		  var count = formid.attr("id");
-		  	           var sc = $("#info img").size();
+    
+    <script>
+         $(function(){
+
+                 $( "#info img" ).on( "swipeleft", swipeleftHandler );
+				 $( "#info img" ).on( "swiperight", swiperightHandler );
+
+
+
+                           function swipeleftHandler( event ){
+							    var formid = $("img:visible");
+		                        var count = formid.attr("id");
+                                        var sc = $("#info img").size();
 			    if(count == sc){
 					 count = sc;
 					}
 					
 			    else{
-					     $("#info #"+count).hide("slide",{direction:"left"},"fast");
+					     $("#info #"+count).hide("slide",{direction:"left"},"slow");
 						 count++;
-						  $("#info #"+count).delay(500).show("slide",{direction:"right"},"fast");}
-					
-		}
+						  $("#info #"+count).show("slide",{direction:"right"},"slow");}
+									  
+						   }
+						   
+			             
+						 function swiperightHandler( event ){
+                                             var formid = $("img:visible");
+		                                     var count = formid.attr("id");
+		  
+		    if(count == 1){
+				  count = 1;
+				}
+			 else{
+			     $("#info #"+count).hide("slide",{direction:"Right"},"slow");
+				 count--;
+				 $("#info #"+count).show("slide",{direction:"left"},"slow");
+				     } 
+													
+                                               }
+
+                                        });
+</script>
+
+    <script type="text/javascript">
+	   
 		
 function search_eng(){
 	   var footer = document.querySelector("#footer_eng");
@@ -56,7 +74,7 @@ function search_eng(){
 	}
 function home_tab(){
 	   var footer = document.querySelector("#footer_eng");
-	   footer.innerHTML = " <a class=\"button button-icon icon ion-ios7-arrow-back\" style=\"border-right:#fff 1px solid;\"   onclick = \"sliderLeft()\"></a><a class=\"button button-icon icon ion-thumbsup\" style=\"border-right:#C0C0C0 1px none;\" ></a><a class=\"button button-icon icon ion-android-search\" style=\"\" onclick =\" search_eng();\" ></a><a class=\"button button-icon icon ion-android-download\" style=\"border-right:#fff 1px solid;\" onclick = \"download();\" ></a><a class=\"button button-icon icon ion-ios7-arrow-forward\" onclick = \"sliderRight()\" ></a>";
+	   footer.innerHTML = "<a class=\"button button-icon icon ion-thumbsup\" style=\"border-right:#C0C0C0 1px none;\" ></a><a class=\"button button-icon icon ion-android-search\" style=\"\" onclick =\" search_eng();\" ></a><a class=\"button button-icon icon ion-android-download\" style=\"border-right:#fff 1px solid;\" onclick = \"download();\" ></a>";
 
 	}
 function comment(){
@@ -175,16 +193,16 @@ table { border-collapse: separate; border-spacing: 5px; }
 						
   
            <div id= "info"  style = "padding:2%; background-color:#fff; height:400px;">
-		          
+		         
 		     </div> 
 			 </ion-content>
 			 <ion-footer-bar class="bar bar-balanced">
 			 <div class = "button-bar" id = "footer_eng">
-   <a class="button button-icon icon ion-ios7-arrow-back" style="border-right:#fff 1px solid;"   onclick = "sliderLeft()"></a>
+   
     <a class="button button-icon icon ion-thumbsup" style="border-right:#C0C0C0 1px none;" onclick = "comment();" ></a>
 	 <a class="button button-icon icon ion-android-search"  onclick = search_eng(); ></a>
 	  <a class="button button-icon icon ion-android-download" style="border-right:#fff 1px solid;" onclick = "download();" ></a>
-  <a class="button button-icon icon ion-ios7-arrow-forward" onclick = "sliderRight()" ></a>
+ 
   </div>
                         </ion-footer-bar>
              </ion-side-menu-content>
