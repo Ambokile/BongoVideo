@@ -161,7 +161,8 @@ table { border-collapse: separate; border-spacing: 5px; }
 		   
   <!-- Center content -->
             
-				<ion-side-menu-content ng-controller="ContentController">
+				<ion-side-menu-content ng-controller="ContentController" edge-drag-threshold="true"
+  drag-content="false">
               <ion-header-bar class="bar bar-balanced">
 			        
 			               <button class="button button-icon icon ion-android-user-menu" menu-toggle="left"></button>
