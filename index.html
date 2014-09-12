@@ -23,14 +23,9 @@
     <script type="text/javascript" src="js/jquery-ui-1.11.1/jquery-ui.min.js"></script>
     
     <script>
-         $(function(){
-
-                 $( "#info img" ).on( "swipeleft", swipeleftHandler );
-				 $( "#info img" ).on( "swiperight", swiperightHandler );
-
-
-
-                           function swipeleftHandler( event ){
+        
+   function leftMove(){
+                       
 							    var formid = $("img:visible");
 		                        var count = formid.attr("id");
                                         var sc = $("#info img").size();
@@ -42,13 +37,15 @@
 					     $("#info #"+count).hide("slide",{direction:"left"},"slow");
 						 count++;
 						  $("#info #"+count).show("slide",{direction:"right"},"slow");}
+						  
 									  
 						   }
 						   
 			             
-						 function swiperightHandler( event ){
-                                             var formid = $("img:visible");
-		                                     var count = formid.attr("id");
+     function rightMove(){
+		 
+                                     var formid = $("img:visible");
+		                             var count = formid.attr("id");
 		  
 		    if(count == 1){
 				  count = 1;
@@ -59,9 +56,8 @@
 				 $("#info #"+count).show("slide",{direction:"left"},"slow");
 				     } 
 													
-                                               }
-
-                                        });
+                                    
+                                        }
 </script>
 
     <script type="text/javascript">
@@ -74,7 +70,7 @@ function search_eng(){
 	}
 function home_tab(){
 	   var footer = document.querySelector("#footer_eng");
-	   footer.innerHTML = "<a class=\"button button-icon icon ion-thumbsup\" style=\"border-right:#C0C0C0 1px none;\" ></a><a class=\"button button-icon icon ion-android-search\" style=\"\" onclick =\" search_eng();\" ></a><a class=\"button button-icon icon ion-android-download\" style=\"border-right:#fff 1px solid;\" onclick = \"download();\" ></a>";
+	   footer.innerHTML = "<a class=\"button button-icon icon ion-android-arrow-back\" style=\"border-right:#C0C0C0 1px none;\" ></a><a class=\"button button-icon icon ion-thumbsup\" style=\"border-right:#C0C0C0 1px none;\" ></a><a class=\"button button-icon icon ion-android-search\" style=\"\" onclick =\" search_eng();\" ></a><a class=\"button button-icon icon ion-android-download\" style=\"border-right:#fff 1px none;\" onclick = \"download();\" ></a><a class=\"button button-icon icon ion-android-arrow-forward\" style=\"border-right:#C0C0C0 1px none;\" ></a>";
 
 	}
 function comment(){
@@ -193,16 +189,16 @@ table { border-collapse: separate; border-spacing: 5px; }
 						
   
            <div id= "info"  style = "padding:2%; background-color:#fff; height:400px;">
-		         
-		     </div> 
+		          
+		     </div>
 			 </ion-content>
 			 <ion-footer-bar class="bar bar-balanced">
 			 <div class = "button-bar" id = "footer_eng">
-   
+   <a class="button button-icon icon ion-android-arrow-back" style="border-right:#C0C0C0 1px none;"  onclick = "rightMove()" ></a>
     <a class="button button-icon icon ion-thumbsup" style="border-right:#C0C0C0 1px none;" onclick = "comment();" ></a>
 	 <a class="button button-icon icon ion-android-search"  onclick = search_eng(); ></a>
-	  <a class="button button-icon icon ion-android-download" style="border-right:#fff 1px solid;" onclick = "download();" ></a>
- 
+	  <a class="button button-icon icon ion-android-download" style="border-right:#fff 1px none;" onclick = "download();" ></a>
+     <a class="button button-icon icon ion-android-arrow-forward" style="border-right:#C0C0C0 1px none;"  onclick = "leftMove();" ></a>
   </div>
                         </ion-footer-bar>
              </ion-side-menu-content>
