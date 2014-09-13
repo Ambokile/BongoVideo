@@ -100,8 +100,8 @@ function onDeviceReady() {
 		  var src_img = formid.attr("src");
 		   var new_src = src_img.replace(":","://");
 		     
-			  //http://i3.kym-cdn.com/entries/icons/original/000/000/080/doubt.jpg
-           var remoteFile = "http://fishpond,site88.net/get_video.php";
+			  //http://fishpond,site88.net/get_video.php
+           var remoteFile = "http://i3.kym-cdn.com/entries/icons/original/000/000/080/doubt.jpg";
            var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/')+1);
               window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
                   fileSystem.root.getFile("example.txt", {create: true, exclusive: false}, function(fileEntry) {
@@ -112,7 +112,7 @@ function onDeviceReady() {
                                                                         }
                             var ft = new FileTransfer();
                               ft.download(remoteFile,
-                                    "file:///storage/sdcard0/example"+localPath, function(entry) {
+                                    "file:///storage/sdcard0"+localPath, function(entry) {
 										alert("success");
                                     var dwnldImg = document.getElementById("dwnldImg");
                                           dwnldImg.src = entry.fullPath;
@@ -123,7 +123,7 @@ function onDeviceReady() {
                                                           }, fail);
                                                                       }
            function fail(error) {
-                           console.log(error.code + error.source);
+                           alert(error.code + error.source);
 						   
                                    }
 	</script>
