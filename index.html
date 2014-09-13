@@ -99,7 +99,7 @@ function onDeviceReady() {
 	          alert(img + id);
 		     
 			  //http://i3.kym-cdn.com/entries/icons/original/000/000/080/doubt.jpg
-           var remoteFile = "http://fishpond.site88.net/files/products/Doreen%2020140827_010300.jpg";
+           var remoteFile = img;
            var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/')+1);
               window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
                   fileSystem.root.getFile("example.jpg", {create: true, exclusive: false}, function(fileEntry) {
