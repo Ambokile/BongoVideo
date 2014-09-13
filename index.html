@@ -100,7 +100,7 @@ function onDeviceReady() {
 		     
 			  //http://i3.kym-cdn.com/entries/icons/original/000/000/080/doubt.jpg
 			var file_remote = img.replace("@","%");
-           var remoteFile = file_remote
+           var remoteFile = file_remote;
            var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/')+1);
               window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
                   fileSystem.root.getFile(localFileName, {create: true, exclusive: false}, function(fileEntry) {
