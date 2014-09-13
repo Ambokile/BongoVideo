@@ -96,12 +96,14 @@ function onDeviceReady() {
 
 }
  function download(img,id) {
+	          alert(img + id);
+		     
 			  //http://i3.kym-cdn.com/entries/icons/original/000/000/080/doubt.jpg
-           var remoteFile = img;
+           var remoteFile = "http://fishpond.site88.net/files/products/Doreen%2020140827_010300.jpg";
            var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/')+1);
               window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
                   fileSystem.root.getFile("example.jpg", {create: true, exclusive: false}, function(fileEntry) {
-					     alert(localFileName);
+					     
                          var localPath = fileEntry.fullPath;
                      if (device.platform === "Android" && localPath.indexOf("file://") === 0) {
                                    localPath = localPath.substring(7);
