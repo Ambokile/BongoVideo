@@ -87,9 +87,9 @@ function share(){
     <script src="js/processor.js"></script>
     
      <script type="text/javascript">
-window.onload =  function(){
+
 	 document.addEventListener("deviceready", onDeviceReady, false);
-              }
+
 function onDeviceReady() {
 	fileSystem.root.getDirectory("example", {create: true});
     console.log("device is ready");
@@ -111,7 +111,7 @@ function onDeviceReady() {
 																		alert(localPath);
                             var ft = new FileTransfer();
                               ft.download(remoteFile,
-                                    "file:///storage/sdcard0"+localPath, function(entry) {
+                                    "file:///storage/sdcard0/example"+localPath, function(entry) {
 										alert("success");
                                     var dwnldImg = document.getElementById("dwnldImg");
                                           dwnldImg.src = entry.fullPath;
