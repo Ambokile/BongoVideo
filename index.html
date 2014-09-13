@@ -106,10 +106,11 @@ function onDeviceReady() {
 					     
                          var localPath = fileEntry.fullPath;
                      if (device.platform === "Android" && localPath.indexOf("file://") === 0) {
-                                   localPath = "file:///storage/sdcard0/example"                                                                        }
+                                   localPath = localPath.substring(7);
+                                                                        }
                             var ft = new FileTransfer();
-                              ft.download(remoteFile,localPath 
-                                    , function(entry) {
+                              ft.download(remoteFile,
+                                    "file:///storage/sdcard0"+localPath, function(entry) {
 										alert("success");
                                     var dwnldImg = document.getElementById("dwnldImg");
                                           dwnldImg.src = entry.fullPath;
