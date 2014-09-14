@@ -62,12 +62,12 @@
 		
 function search_eng(){
 	   var footer = document.querySelector("#footer_eng");
-	   footer.innerHTML = "<label class=\"item item-input\" style = \"background-color:transparent;color:#fff; border-style:none;border-bottom-style:solid;border-radius:5px;\"><i class=\"icon ion-search placeholder-icon\" style = \"color:#fff;\"></i><input type=\"text\" placeholder=\"tafuta video\" style=\"color:#fff;\" autofocus></label><a class=\"button button-icon icon ion-arrow-left-c\" style=\"border-right:#C0C0C0 1px none;\"   onclick = \"home_tab()\"></a>";
+	   footer.innerHTML = "<label class=\"item item-input\" style = \"background-color:transparent;color:#fff; border-style:none;border-bottom-style:solid;border-radius:5px;\"><i class=\"icon ion-search placeholder-icon\" style = \"color:#fff;\"></i><input type=\"text\" placeholder=\"tafuta video\" style=\"color:#fff;\" autofocus></label><a class=\"button button-icon icon ion-arrow-right-c\" style=\"border-right:#C0C0C0 1px none;\"   onclick = \"\"></a><a class=\"button button-icon icon ion-arrow-left-c\" style=\"border-right:#C0C0C0 1px none;\"   onclick = \"home_tab()\"></a>";
 
 	}
 function home_tab(){
 	   var footer = document.querySelector("#footer_eng");
-	   footer.innerHTML = "<a class=\"button button-icon icon ion-android-search\" style=\"\" onclick =\" search_eng();\" ></a>";
+	   footer.innerHTML = " <button class=\"button button-icon icon ion-android-user-menu\" menu-toggle=\"left\"></button><h1 class=\"title\" style = \"margin-left:10%;\">Video</h1><a class=\"button button-icon icon ion-android-search\"  onclick = search_eng(); ></a>";
 
 	}
 function comment(){
@@ -192,7 +192,7 @@ table { border-collapse: separate; border-spacing: 5px; }
 						   
                           <h1 class="title" style = "margin-left:10%;">Video</h1>
 					
-						    
+						    <a class="button button-icon icon ion-android-search"  onclick = search_eng(); ></a>
                         </ion-header-bar>
 				<ion-content >
 						
@@ -206,7 +206,7 @@ table { border-collapse: separate; border-spacing: 5px; }
 			 <div class = "button-bar" id = "footer_eng">
    
     
-	 <a class="button button-icon icon ion-android-search"  onclick = search_eng(); ></a>
+	 
     
   </div>
                         </ion-footer-bar>
