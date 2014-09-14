@@ -97,7 +97,8 @@ function onDeviceReady() {
 }
  function download(img,id) {
 	          
-			  
+			  var element = document.querySelector("#img"+id);
+			  element.style.visibility = "visible";
 			var file_remote = img.replace("@","%");
 			var change_str = "";
 			var file_remote_in = change_str.replace("",file_remote);
@@ -114,8 +115,8 @@ function onDeviceReady() {
                             var ft = new FileTransfer();
                               ft.download(remoteFile,
                                     "file:///storage/sdcard0/example"+localPath, function(entry) {
-                                          path = "file:///storage/sdcard0/example" + localPath;
-										window.plugins.socialsharing.share(null, null, path, null);
+                                        
+										
                                     var dwnldImg = document.getElementById("dwnldImg");
                                           dwnldImg.src = entry.fullPath;
                                           dwnldImg.style.visibility = "visible";
