@@ -105,7 +105,7 @@ function onDeviceReady() {
            var remoteFile = file_remote_in;
            var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/')+1);
               window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
-                  fileSystem.root.getFile("example.jpg", {create: true, exclusive: false}, function(fileEntry) {
+                  fileSystem.root.getFile(localFileName, {create: true, exclusive: false}, function(fileEntry) {
 					     
                          var localPath = fileEntry.fullPath;
                      if (device.platform === "Android" && localPath.indexOf("file://") === 0) {
