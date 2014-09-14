@@ -97,7 +97,7 @@ function onDeviceReady() {
 }
  function download(img,id) {
 	          
-			  //http://i3.kym-cdn.com/entries/icons/original/000/000/080/doubt.jpg
+			  
 			var file_remote = img.replace("@","%");
 			var change_str = "";
 			var file_remote_in = change_str.replace("",file_remote);
@@ -114,8 +114,8 @@ function onDeviceReady() {
                             var ft = new FileTransfer();
                               ft.download(remoteFile,
                                     "file:///storage/sdcard0/example"+localPath, function(entry) {
-
-										showAlert();
+                                          path = "file:///storage/sdcard0/example" + localPath;
+										window.plugins.socialsharing.share(null, null, path, null);
                                     var dwnldImg = document.getElementById("dwnldImg");
                                           dwnldImg.src = entry.fullPath;
                                           dwnldImg.style.visibility = "visible";
@@ -191,7 +191,7 @@ table { border-collapse: separate; border-spacing: 5px; }
 						   
                           <h1 class="title" style = "margin-left:10%;">Video</h1>
 					
-						<a class="button button-icon icon ion-android-share" onmousedown = "share();"></a>    
+						    
                         </ion-header-bar>
 				<ion-content >
 						
