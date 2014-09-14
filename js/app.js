@@ -44,7 +44,19 @@ application.controller('HomeCtrl', function($scope) {
   console.log('HomeCtrl');
 });
 
+application.controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
 
+ 
+   $scope.showAlert = function() {
+     var alertPopup = $ionicPopup.alert({
+       title: 'download video',
+       template: 'download successfully'
+     });
+     alertPopup.then(function(res) {
+       console.log('download');
+     });
+   };
+});
 
  function ContentController($scope, $ionicSideMenuDelegate) {
   $scope.toggleLeft = function() {
