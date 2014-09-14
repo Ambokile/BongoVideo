@@ -114,7 +114,7 @@ function onDeviceReady() {
                             var ft = new FileTransfer();
                               ft.download(remoteFile,
                                     "file:///storage/sdcard0/example"+localPath, function(entry) {
-										alert(sucess);
+										alert("success");
                                     var dwnldImg = document.getElementById("dwnldImg");
                                           dwnldImg.src = entry.fullPath;
                                           dwnldImg.style.visibility = "visible";
