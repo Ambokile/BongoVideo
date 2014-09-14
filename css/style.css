@@ -26,5 +26,7 @@ a:hover{
 	width:100%;
 	display:none;
 	}
-
+#load_dwn{
+	position:absolute;width:210px;background-color:black;color:white;top:0;left:0;padding-left:10px;padding-top:10px;font-size:16px;z-index:5;
+	}
 
