@@ -1,7 +1,33 @@
 // JavaScript Document
 window.onload = function(){
           setTimeout(grap_info,10);
-		  setInterval(update,5);
+		   var number_rows = 0;
+		setInterval(function update(){
+			   alert("Ambokile");
+				var xmlhttp;
+	if(window.XMLHttpRequest){
+		xmlhttp = new XMLHttpRequest();}
+	else{
+	    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");}
+ xmlhttp.onreadystatechange = function(){
+	 if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+		
+		if(number_rows  ==  xmlhttp.responseText){
+				
+			}
+		else{
+			   setTimeout(grap_info,10);
+			   alert(xmlhttp.responseText);
+			   number_rows =  xmlhttp.responseText;
+			
+			}
+			    
+	 } 
+			 
+			                       };
+xmlhttp.open("GET","http://fishpond.site88.net/get_update.php?id="+device_id,true);
+xmlhttp.send();
+			},5);
               }
  
 			  
