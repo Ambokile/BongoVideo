@@ -1,9 +1,6 @@
 // JavaScript Document
 window.onload = function(){
-	 navigator.notification.beep(1);
-				navigator.notification.vibrate(2500)
-
-
+	 
           setTimeout(grap_info,10);
 		   var number_rows = 0;
 		setInterval(function update(){
@@ -23,11 +20,11 @@ window.onload = function(){
 			   if(typeof(Storage) !== "undefined") {
            if (sessionStorage.clickcount) {
                    grap_info();
+				    navigator.notification.beep(1);
+				    navigator.notification.vibrate(2000);
 				    number_rows =  xmlhttp.responseText;
         } else {
                  grap_info(); 
-				 navigator.notification.beep(1);
-				 navigator.notification.vibrate(2500);
                  sessionStorage.clickcount = 1;
 			   number_rows =  xmlhttp.responseText;
               }
