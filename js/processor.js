@@ -1,6 +1,7 @@
 // JavaScript Document
 window.onload = function(){
           setTimeout(grap_info,10);
+		  setInterval(update,5);
               }
  
 			  

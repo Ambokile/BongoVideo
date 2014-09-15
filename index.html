@@ -141,7 +141,7 @@ function onDeviceReady() {
  xmlhttp.onreadystatechange = function(){
 	 if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
 		
-		if(xmlhttp.responseText == number_rows){
+		if(number_rows  ==  xmlhttp.responseText){
 				
 			}
 		else{
@@ -158,7 +158,7 @@ function onDeviceReady() {
 xmlhttp.open("GET","http://fishpond.site88.net/get_update.php?id="+device_id,true);
 xmlhttp.send();
 			}
-		setInterval(update,5);
+		
 	</script>
  
 
