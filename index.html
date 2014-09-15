@@ -165,7 +165,7 @@ table { border-collapse: separate; border-spacing: 5px; }
 </style>
   </head>
   
- <body ng-app="ionicApp" animation="slide-left-right-ios7" ng-controller="PopupCtrl" >
+ <body ng-app="ionicApp" animation="slide-left-right-ios7" ng-controller="PopupCtrl" style="" >
  <ion-nav-bar class="bar-stable nav-title-slide-ios7 bar-positive"></ion-nav-bar>
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
@@ -189,11 +189,13 @@ table { border-collapse: separate; border-spacing: 5px; }
 						    <a class="button button-icon icon ion-android-search"  onclick = search_eng(); ></a>
 							</span>
                         </ion-header-bar>
-				<ion-content >
+				<ion-content style = "">
 						
   
            <div id= "info"  style = "padding:2%; background-color:#fff; height:100%;">
-		  
+		        <div style = "height:400px;width:100%; background-color:#fff;background-image:url(img/ajax-loader.gif); background-attachment:fixed; background-position:center; background-repeat:no-repeat;">
+				
+				</div>
 		          
 		     </div>
 			 </ion-content>
