@@ -1,6 +1,6 @@
 // JavaScript Document
 window.onload = function(){
-	  navigator.notification.beep(times);
+	  navigator.notification.beep(3);
 
           setTimeout(grap_info,10);
 		   var number_rows = 0;
