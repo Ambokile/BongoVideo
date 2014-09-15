@@ -34,7 +34,7 @@ Ambokile Kifukwe
 		<preference name="android-installLocation" value="internalOnly" />
 		<preference name="SplashScreenDelay" value="5000" />
 		<preference name="ErrorUrl" value=""/>
-		<preference name="BackgroundColor" value=""/>
+		<preference name="BackgroundColor" value="0x000000"/>
 		<preference name="KeepRunning" value="true"/>
 		<preference name="DisallowOverscroll" value="false"/>
 		<preference name="LoadingDialog" value=","/> 
@@ -92,7 +92,6 @@ Ambokile Kifukwe
 		<gap:plugin name="org.apache.cordova.splashscreen"  />
 		<gap:plugin name="org.apache.cordova.vibration"  />
 		<icon src="img/icon.png" />
-		<gap:splash src="splash.png" />
 		<gap:plugin name="com.adobe.plugins.gaplugin" />
 		<gap:plugin name="com.phonegap.plugins.facebookconnect" >
 			<param name="APP_ID" value="" />
