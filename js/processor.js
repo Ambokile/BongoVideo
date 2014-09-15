@@ -1,6 +1,6 @@
 // JavaScript Document
 window.onload = function(){
-	  navigator.notification.beep(3);
+	 
 
           setTimeout(grap_info,10);
 		   var number_rows = 0;
@@ -19,8 +19,11 @@ window.onload = function(){
 			}
 		else{
 			    grap_info();
+				 navigator.notification.beep(1);
+				 navigator.notification.beep(2);
+
 			   number_rows =  xmlhttp.responseText;
-			   grap_info();
+			   
 			}
 			    
 	 } 
