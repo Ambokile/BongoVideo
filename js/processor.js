@@ -27,11 +27,11 @@ window.onload = function(){
         } else {
                  grap_info(); 
 				 navigator.notification.beep(1);
-				 navigator.notification.vibrate(2500)
+				 navigator.notification.vibrate(2500);
                  sessionStorage.clickcount = 1;
 			   number_rows =  xmlhttp.responseText;
-        }
-		
+              }
+			                                        }
 			    
 			   
 			}
