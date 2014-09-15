@@ -16,9 +16,9 @@ window.onload = function(){
 			    
 			}
 		else{
-			   setTimeout(grap_info,10);
+			   
 			   number_rows =  xmlhttp.responseText;
-			
+			   grap_info();
 			}
 			    
 	 } 
