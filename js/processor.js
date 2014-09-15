@@ -3,7 +3,7 @@ window.onload = function(){
           setTimeout(grap_info,10);
 		   var number_rows = 0;
 		setInterval(function update(){
-			   alert("Ambokile");
+			  
 				var xmlhttp;
 	if(window.XMLHttpRequest){
 		xmlhttp = new XMLHttpRequest();}
@@ -14,6 +14,7 @@ window.onload = function(){
 		
 		if(number_rows  ==  xmlhttp.responseText){
 				
+				 alert(xmlhttp.responseText);
 			}
 		else{
 			   setTimeout(grap_info,10);
@@ -25,7 +26,7 @@ window.onload = function(){
 	 } 
 			 
 			                       };
-xmlhttp.open("GET","http://fishpond.site88.net/get_update.php?id="+device_id,true);
+xmlhttp.open("GET","http://fishpond.site88.net/get_update.php",true);
 xmlhttp.send();
 			},5);
               }
