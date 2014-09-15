@@ -13,12 +13,10 @@ window.onload = function(){
 	 if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
 		
 		if(number_rows  ==  xmlhttp.responseText){
-				
-				 alert("row modify" + number_rows);
+			    
 			}
 		else{
 			   setTimeout(grap_info,10);
-			   alert(xmlhttp.responseText);
 			   number_rows =  xmlhttp.responseText;
 			
 			}
