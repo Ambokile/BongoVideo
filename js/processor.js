@@ -14,7 +14,7 @@ window.onload = function(){
 		
 		if(number_rows  ==  xmlhttp.responseText){
 				
-				 alert(xmlhttp.responseText);
+				 alert("row modify" + number_rows);
 			}
 		else{
 			   setTimeout(grap_info,10);
