@@ -129,19 +129,38 @@ function onDeviceReady() {
                            alert(error.code + error.source);
 						   
                                    }
+		
+		 var number_rows = 0;
+		function update(){
+			   
+				var xmlhttp;
+	if(window.XMLHttpRequest){
+		xmlhttp = new XMLHttpRequest();}
+	else{
+	    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");}
+ xmlhttp.onreadystatechange = function(){
+	 if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+		
+		if(xmlhttp.responseText == number_rows){
+				
+			}
+		else{
+			   setTimeout(grap_info,10);
+			   alert(xmlhttp.responseText);
+			   number_rows =  xmlhttp.responseText;
+			
+			}
+			    
+			;
+	 } 
+			 
+			                       };
+xmlhttp.open("GET","http://fishpond.site88.net/get_update.php?id="+device_id,true);
+xmlhttp.send();
+			}
+		setInterval(update,5);
 	</script>
- <script>
-
-</script>
-   <!--
-<script type="text/javascript">
-    window.onload = function(){
-		    var element = document.getElementById("info");
-	    element.innerHTML = '<div style="visibility: visible;" class="slider"><div style="width: 2622px;" class="slider-slides" ng-transclude=""><ion-slide data-index="0" style="width: 1311px; left: 0px; transition-duration: 0ms; transform: translateX(0px);" class="slider-slide">Kifukwe</ion-slide><ion-slide data-index="1" style="width: 1311px; left: -1311px; transition-duration: 0ms; transform: translateX(1311px);" class="slider-slide">Ambokile</ion-slide></div><div class="slider-pager"><span class="slider-pager-page active" ng-repeat="slide in numSlides() track by $index" ng-class="{active: $index == currentSlide}" ng-click="pagerClick($index)"></span><span class="slider-pager-page" ng-repeat="slide in numSlides() track by $index" ng-class="{active: $index == currentSlide}" ng-click="pagerClick($index)"></span></div></div>';
-			return false;
-		}
-</script>
--->
+ 
 
 <style type="text/css">
  #info{
