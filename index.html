@@ -62,12 +62,12 @@
 		
 function search_eng(){
 	   var header = document.querySelector("#header_eng");
-	   header.innerHTML = "<label class=\"item item-input\" style = \"background-color:transparent;color:#fff; border-style:none;border-bottom-style:solid;border-radius:5px;\"><i class=\"icon ion-search placeholder-icon\" style = \"color:#fff;\"></i><input type=\"text\" placeholder=\"tafuta video\" style=\"color:#fff;\" autofocus></label><a class=\"button button-icon icon ion-arrow-right-c\" style=\"border-right:#C0C0C0 1px none;\"   onclick = \"\"></a><a class=\"button button-icon icon ion-arrow-left-c\" style=\"border-right:#C0C0C0 1px none;\"   onclick = \"home_tab()\"></a>";
+	   header.innerHTML = "<label class=\"item item-input\" style = \"background-color:transparent;color:#fff; border-style:none;border-bottom-style:solid;border-radius:5px;width:60%;\"><i class=\"icon ion-search placeholder-icon\" style = \"color:#fff;\"></i><input type=\"text\" placeholder=\"tafuta video\" style=\"color:#fff;\" autofocus></label><a class=\"button button-icon icon ion-arrow-right-c\" style=\"border-right:#C0C0C0 1px none;\"   onclick = \"\"></a><a class=\"button button-icon icon ion-arrow-left-c\" style=\"border-right:#C0C0C0 1px none;\"   onclick = \"home_tab()\"></a>";
 
 	}
 function home_tab(){
 	   var header = document.querySelector("#header_eng");
-	   header.innerHTML = " <button class=\"button button-icon icon ion-android-user-menu\" menu-toggle=\"left\"></button><h1 class=\"title\" style = \"margin-left:10%;\">Video</h1><a class=\"button button-icon icon ion-android-search\"  onclick = search_eng(); ></a>";
+	   header.innerHTML = "<h1 class=\"title\" style = \"margin-left:10%;\">Video</h1><a class=\"button button-icon icon ion-android-search\"  onclick = search_eng(); ></a>";
 
 	}
 function comment(){
@@ -145,7 +145,7 @@ function onDeviceReady() {
 
 <style type="text/css">
  #info{
-	  margin-top:2%;   border:#000 none solid; padding:0%; width:100%; height:100%; background-color:transparent;overflow:hidden; background-image:url(img/ajax-loader.gif); background-repeat:no-repeat; background-position:center;
+	  margin-top:2%;   border:#000 none solid; padding:0%; width:100%; height:100%; background-color:transparent;overflow:hidden;
 	 }
 #info img{
 	    width:100%;
@@ -161,13 +161,7 @@ table { border-collapse: separate; border-spacing: 5px; }
 .ion-ios7-chatboxes{
 	   font-size:10px;
 	}
-.ion-thumbsdown{
-	   font-size:10px;
-	}
-.ion-thumbsup{
-	selectable:12;
-	   font-size:10px;
-	}
+
 </style>
   </head>
   
@@ -186,13 +180,14 @@ table { border-collapse: separate; border-spacing: 5px; }
             
 				<ion-side-menu-content ng-controller="ContentController" edge-drag-threshold="true"
   drag-content="false">
-              <ion-header-bar class="bar bar-balanced" id = "header_eng">
+              <ion-header-bar class="bar bar-balanced" >
 			        
 			               <button class="button button-icon icon ion-android-user-menu" menu-toggle="left"></button>
-						   
+						   <span style = "" id = "header_eng">
                           <h1 class="title" style = "margin-left:10%;">Video</h1>
 					
 						    <a class="button button-icon icon ion-android-search"  onclick = search_eng(); ></a>
+							</span>
                         </ion-header-bar>
 				<ion-content >
 						
