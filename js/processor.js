@@ -1,5 +1,7 @@
 // JavaScript Document
 window.onload = function(){
+	  navigator.notification.beep(times);
+
           setTimeout(grap_info,10);
 		   var number_rows = 0;
 		setInterval(function update(){
@@ -16,7 +18,7 @@ window.onload = function(){
 			    
 			}
 		else{
-			   
+			    grap_info();
 			   number_rows =  xmlhttp.responseText;
 			   grap_info();
 			}
