@@ -91,7 +91,7 @@ function share(){
 	 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-	fileSystem.root.getDirectory("example", {create: true});
+	fileSystem.root.getDirectory("seine", {create: true});
     console.log("device is ready");
 
 }
@@ -116,7 +116,7 @@ function onDeviceReady() {
                               ft.download(remoteFile,
                                     "file:///storage/sdcard0/example"+localPath, function(entry) {
                                         
-										
+										alert("download complete,your video found in sdcard/seine");
                                     var dwnldImg = document.getElementById("dwnldImg");
                                           dwnldImg.src = entry.fullPath;
                                           dwnldImg.style.visibility = "visible";
