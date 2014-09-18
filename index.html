@@ -157,7 +157,7 @@ table { border-collapse: separate; border-spacing: 5px; }
 </style>
   </head>
   
- <body ng-app="ionicApp" animation="slide-left-right-ios7" ng-controller="PopupCtrl" style=" " >
+ <body ng-app="ionicApp" animation="slide-left-right-ios7" style=" " >
  <ion-nav-bar class="bar-stable nav-title-slide-ios7 bar-positive"></ion-nav-bar>
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
@@ -170,8 +170,8 @@ table { border-collapse: separate; border-spacing: 5px; }
 		   
   <!-- Center content -->
             
-				<ion-side-menu-content ng-controller="ContentController" edge-drag-threshold="true"
-  drag-content="false">
+				<ion-side-menu-content ng-controller="ContentController" edge-drag-threshold="false"
+  drag-content="true">
               <ion-header-bar class="bar bar-balanced" >
 			        
 			               <button class="button button-icon icon ion-android-user-menu" menu-toggle="left"></button>
@@ -211,7 +211,7 @@ table { border-collapse: separate; border-spacing: 5px; }
 	
 	  <div class="list card" style = "border-radius:15px;color:#000;margin-top:35%;">
 
-  <a href="#" class="item item-icon-left">
+  <a href="#" class="item item-icon-left" onclick = "window.open('#info','_blank','location = no');">
   
     log in 
 	<i class="icon ion-arrow-return-right"></i>
@@ -251,12 +251,56 @@ table { border-collapse: separate; border-spacing: 5px; }
 
    <script id ="info.html" type="text/ng-template">
 	       
-       <ion-header-bar class="bar bar-balanced">
-                          <h1 class="title" style = "margin-left:10%;">Contacts</h1>  
+       <ion-header-bar class="bar bar-light" style = "border-color:none;">
                         </ion-header-bar>
 	     
     <ion-content>
-            
+                     <div class="list card">
+
+  <div class="item item-avatar">
+    <img src="img/background.jpg" height = "70px">
+    <h2>Bongo Video</h2>
+    <p>November 05, 1955</p>
+  </div>
+
+  <div class="item item-body">
+             <div class="list list-inset">
+  <label class="item item-input">
+    <input type="text" placeholder="user Name">
+  </label>
+  <label class="item item-input">
+    <input type="password" placeholder="password">
+  </label>
+
+    <button class="button button-block button-positive">
+   Enter
+</button>
+  
+  
+</div>
+    <p>
+     
+    </p>
+    <p>
+    </p>
+  </div>
+
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" href="#">
+      <i class="icon ion-thumbsup"></i>
+      Like
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-chatbox"></i>
+      Comment
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-share"></i>
+      Register
+    </a>
+  </div>
+
+</div>
 	
 	
   
