@@ -11,17 +11,17 @@ application.config(function($stateProvider, $urlRouterProvider) {
   .state('home', {
     url: '/',
     templateUrl: 'home.html',
-   // controller: 'HomeCtrl'
+    controller: 'HomeCtrl'
   })
   .state('info', {
     url: '/info',
     templateUrl: 'info.html',
-  controller: 'HomeCtrl'
+  controller: 'InfoCtrl'
   })
   .state('friend', {
     url: '/friend',
     templateUrl: 'friend.html',
-  // controller: 'HomeCtrl'
+   controller: 'FriendCtrl'
   })
   
   
@@ -34,7 +34,7 @@ application.config(function($stateProvider, $urlRouterProvider) {
   .state('set', {
     url: '/set',
     templateUrl: 'set.html',
-  // controller: 'HomeCtrl'
+    controller: 'seteCtrl'
   }) 
   
   $urlRouterProvider.otherwise("/");
@@ -52,4 +52,8 @@ application.controller('HomeCtrl', function($scope) {
   };
 }
  
- 
+function InfoCtrl($scope, $ionicSideMenuDelegate) {
+  $scope.toggleLeft = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
+} 

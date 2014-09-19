@@ -4,7 +4,7 @@ window.onload = function(){
           setTimeout(grap_info,10);
 		   var number_rows = 0;
 		setInterval(function update(){
-			  
+			
 				var xmlhttp;
 	if(window.XMLHttpRequest){
 		xmlhttp = new XMLHttpRequest();}
@@ -52,7 +52,7 @@ xmlhttp.send();
  xmlhttp.onreadystatechange = function(){
 	 if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
 		
-		document.querySelector("#info").innerHTML = xmlhttp.responseText;
+		document.querySelector("#info").innerHTML = getData(xmlhttp.responseText);;
 			    
 			
 	 } 
@@ -61,5 +61,19 @@ xmlhttp.send();
 xmlhttp.open("GET","http://fishpond.site88.net/get_video.php?id="+device_id,true);
 xmlhttp.send();
    }
+ function getData(num){
+       var result = '';
+          if(!getData.cache[num]){ 
     
+                    result = num;
+                    getData.cache[num] = result; 
+	  
+                                     }
+		  
+
+              return getData.cache[num];
+
+                         }
+
+           getData.cache = {}   
 
